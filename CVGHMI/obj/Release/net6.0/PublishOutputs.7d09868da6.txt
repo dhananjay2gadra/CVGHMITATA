@@ -1,0 +1,7 @@
+F:\cvgwork\CVGHMI\CVGHMI\CVGHMI\obj\Release\net6.0\PubTmp\Out\CVGHMI.exe
+F:\cvgwork\CVGHMI\CVGHMI\CVGHMI\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+F:\cvgwork\CVGHMI\CVGHMI\CVGHMI\obj\Release\net6.0\PubTmp\Out\appsettings.json
+F:\cvgwork\CVGHMI\CVGHMI\CVGHMI\obj\Release\net6.0\PubTmp\Out\CVGHMI.dll
+F:\cvgwork\CVGHMI\CVGHMI\CVGHMI\obj\Release\net6.0\PubTmp\Out\CVGHMI.deps.json
+F:\cvgwork\CVGHMI\CVGHMI\CVGHMI\obj\Release\net6.0\PubTmp\Out\CVGHMI.runtimeconfig.json
+F:\cvgwork\CVGHMI\CVGHMI\CVGHMI\obj\Release\net6.0\PubTmp\Out\CVGHMI.pdb

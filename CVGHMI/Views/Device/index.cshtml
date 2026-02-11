@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Device";
+}
+
+<div class="row card p-3 bk" style="margin-top: 5px;margin-left:10px;margin-right: 10px;">
+
+
+<div class="row" style="margin-top: 7px;">
+    <div class="col-1">
+    </div>
+    <div class="col-2">
+        <span>IMEI NO.</span>
+   </div>
+    <div class="col-2">
+        <input type="text" id="txtTerminal" name="txtTerminal"/>
+    </div>
+
+    <div class="col-1">
+    </div>
+
+    <div class="col-2">
+        <span>OWNER ID<span>
+    </div>   
+    <div class="col-2">
+        <select id="cmbownerid" name="cmbownerid">
+            <option>Select Any one</option>
+        </select>
+     </div>  
+     
+        </div>
+
+
+
+        <div class="row" style="margin-top: 7px;">
+        
+            <div class="col-1">
+    </div>
+
+   <div class="col-2">
+         <span>VEHICLE NO.</span>
+   </div>
+   <div class="col-2">
+        <input type="text" id="txtPlateNo" name="txtPlateNo"/>
+        </div>
+
+          <div class="col-1">
+    </div>  
+    <div class="col-2">
+         <span>STATUS<span>
+             </div>
+   <div class="col-2">
+         <select id="cmbStatus" name="cmbStatus">
+            <option>Select Any one</option>
+            <option>ACTIVE</option>
+            <option>BLOCK</option>
+        </select>
+
+
+        </div>
+
+         
+   
+</div>
+<div class="row"  style="margin-top: 10px;">
+
+    <div class="col" style="text-align: center;">
+        <input type="button" value="Add Device" />
+       
+        <input type="button" value="Add Owner" onclick="Addowner()"/>
+        </div>
+        </div>
+</div>
+<div class="row" style="margin-top: 5px;">
+    <div class="col-md-12">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card p-3 bk">
+                    <div class="d-flex flex-row mb-3">
+
+                        <div id="table-scroll" class="table-scroll">
+                            <table id="tblmain" class="main-table table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">IMEI NO.</th>
+
+                                        <th scope="col">ORGANIZATION</th>
+                                        <th scope="col">VEHICLE NO</th>
+                                        <th scope="col">STATUS</th>
+                                        <th scope="col">ACTION</th>
+
+
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData">
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+
+@Html.Partial("~/Views/Shared/ownermodel.cshtml")
+<script>
+
+function Addowner()
+{
+     $('#VacAlarmInfo').modal('show');
+}
+</script>
+

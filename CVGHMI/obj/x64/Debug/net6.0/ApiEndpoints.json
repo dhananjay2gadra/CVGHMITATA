@@ -1,0 +1,866 @@
+[
+  {
+    "ContainingType": "CVGHMI.Controllers.GCSController",
+    "Method": "fiimage",
+    "RelativePath": "api/GCS/fiimage/{dirName}/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dirName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.GCSController",
+    "Method": "fiVideo",
+    "RelativePath": "api/GCS/fivideo/{dirName}/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dirName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.GCSController",
+    "Method": "GetImage",
+    "RelativePath": "api/GCS/image/{dirName}/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dirName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.GCSController",
+    "Method": "GetVideo",
+    "RelativePath": "api/GCS/video/{dirName}/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dirName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "Index",
+    "RelativePath": "Data",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "MakeCall",
+    "RelativePath": "Data/Call",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "callReq",
+        "Type": "CVGHMI.Models.Location.CallReq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "MakeCallEnd",
+    "RelativePath": "Data/CallEnd",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "callReq",
+        "Type": "CVGHMI.Models.Location.CallReq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetAlarmData",
+    "RelativePath": "Data/GetAlarmInfo/{pid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetAlarmrank",
+    "RelativePath": "Data/GetAlarmrank/{palate_no}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "palate_no",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "Getalarmsumraw",
+    "RelativePath": "Data/Getalarmsumraw/{profileid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetAlarmtotalrank",
+    "RelativePath": "Data/GetAlarmtotalrank/{pwonerid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pwonerid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetContact",
+    "RelativePath": "Data/GetContact/{ownerid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetDevice",
+    "RelativePath": "Data/GetDevice/{owner_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "owner_id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetDeviceModal",
+    "RelativePath": "Data/GetDeviceSession",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetGpsData",
+    "RelativePath": "Data/GetGps/{pid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "Getgpsdis24hrs",
+    "RelativePath": "Data/Getgpsdis24hrs/{ownerid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "Getgpslogs",
+    "RelativePath": "Data/Getgpslogs/{ownerid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetContact",
+    "RelativePath": "Data/GetOffline/{ppid}/{logdate}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ppid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "logdate",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOnline",
+    "RelativePath": "Data/GetOnline/{ownerid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOrgalarmsumraw",
+    "RelativePath": "Data/GetOrgalarmsumraw/{profileid}/{ownerid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOrgalarmsumrawdt",
+    "RelativePath": "Data/GetOrgalarmsumrawdt/{profileid}/{ownerid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "Getorgalarmsumrawpi",
+    "RelativePath": "Data/Getorgalarmsumrawpi/{owner_id}/{profileid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "owner_id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwnerAlarmSummary",
+    "RelativePath": "Data/GetOwnerAlarmSummary/{ownerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwneralarmsumraw",
+    "RelativePath": "Data/GetOwneralarmsumraw/{profileid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwneralarmsumrawdt",
+    "RelativePath": "Data/GetOwneralarmsumrawdt/{profileid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwneralarmsumrawpi",
+    "RelativePath": "Data/GetOwneralarmsumrawpi/{profileid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwnerDtAlarm",
+    "RelativePath": "Data/GetOwnerDtAlarm/{ownerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwnerdtVehicle",
+    "RelativePath": "Data/GetOwnerdtVehicle/{profileid}/{ownerid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwnerInfo",
+    "RelativePath": "Data/GetOwnerInfo/{profileid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetOwnerVehicle",
+    "RelativePath": "Data/GetOwnerVehicle/{profileid}/{ownerid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ownerid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetTop10gr",
+    "RelativePath": "Data/GetTop10gr/{profileid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetTop10org",
+    "RelativePath": "Data/GetTop10org/{owner_id}/{profileid}/{pfromdt}/{ptodt}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "owner_id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "profileid",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pfromdt",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "ptodt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetUserInfo",
+    "RelativePath": "Data/GetUserInfo/{padid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "padid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetVehicleData",
+    "RelativePath": "Data/GetVehicleData/{plateNo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "plateNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetVehicleOwnerData",
+    "RelativePath": "Data/GetVehicleOwnerData/{ownerId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ownerId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "Getvideosession",
+    "RelativePath": "Data/Getvideosession",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetProfileData",
+    "RelativePath": "Data/Profile/{pid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "GetQueryData",
+    "RelativePath": "Data/Query/{owner}/{startDate}/{endDate}/{type}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "owner",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "VideoEnd",
+    "RelativePath": "Data/VideoEnd",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoReq",
+        "Type": "CVGHMI.Models.Location.VideoReq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "VideoStart",
+    "RelativePath": "Data/VideoStart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoReq",
+        "Type": "CVGHMI.Models.Location.VideoReq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "VideoStart2",
+    "RelativePath": "Data/VideoStart2",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoReq",
+        "Type": "CVGHMI.Models.Location.VideoReq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CVGHMI.Controllers.DataController",
+    "Method": "voicemulticall",
+    "RelativePath": "Data/voicemulticall",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "callReq",
+        "Type": "CVGHMI.Models.Location.CallReq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

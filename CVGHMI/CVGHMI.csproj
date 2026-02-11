@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\flatpickr-master\**" />
+    <Content Remove="wwwroot\lib\flatpickr-master\**" />
+    <EmbeddedResource Remove="wwwroot\lib\flatpickr-master\**" />
+    <None Remove="wwwroot\lib\flatpickr-master\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\lib\Choices.js\.vscode\extensions.json" />
+    <Content Include="wwwroot\lib\Choices.js\.vscode\launch.json" />
+    <Content Include="wwwroot\lib\Choices.js\.vscode\settings.json" />
+    <Content Include="wwwroot\lib\Choices.js\.vscode\tasks.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\Choices.js\.github\actions-scripts\polyfills-sync.cjs" />
+    <None Include="wwwroot\lib\Choices.js\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="wwwroot\lib\Choices.js\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <None Include="wwwroot\lib\Choices.js\.github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="wwwroot\lib\Choices.js\.github\release-drafter.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\browsers.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\bundlesize.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\deploy-pages.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\deployment.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\lint.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\polyfills-sync.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\release-drafter.yml" />
+    <None Include="wwwroot\lib\Choices.js\.github\workflows\unit-tests.yml" />
+    <None Include="wwwroot\videos\star.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+    <PackageReference Include="highcharts.js" Version="7.1.2" />
+    <PackageReference Include="MySql.Data" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\vid\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVG Login</title>
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+</head>
+<body>
+
+
+
+
+    <div class="bgimg">
+        <img src="/Login/dfmsbg.jpg" alt="DFMS Background Image">
+
+    </div>
+    <form asp-controller="Login" asp-action="Auth" method="post">
+        <div class="logo-container">
+            <img src="/login/logo.png" alt="logo">
+        </div>
+        <h3 style="font-size:20px;">Driver Fatigue Monitoring System</h3>
+
+
+        <label for="usr_id">User Id</label>
+        <input type="text" name="usr_id" id="usr_id" aria-describedby="emailHelp" placeholder="Enter User Id">
+
+
+        <label for="usr_password">Password</label>
+        <input type="password" name="usr_password" id="usr_password" placeholder="Enter Password">
+
+        <button type="submit" class="button">Log In</button>
+
+
+    </form>
+
+
+
+
+
+
+
+</body>
+</html> 

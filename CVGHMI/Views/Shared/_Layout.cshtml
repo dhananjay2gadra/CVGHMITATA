@@ -1,0 +1,266 @@
+﻿
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CVGHMI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/t.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CVGHMI.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/lib/flatpickr/dist/flatpickr.min.css">
+    <script src="~/lib/flatpickr/dist/flatpickr.min.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    @* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.15/jstree.search.min.js"></script>
+
+    <style>
+        body {
+        padding-top: 65px; /* Offset for fixed navbar */
+        }
+
+        .dropdown-item
+        {
+        color:#fff;
+        }
+
+        .dropdown-menu
+        {
+        border:0px;
+        }
+    </style>
+</head>
+<body style="background: aliceblue;">
+
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  border-bottom box-shadow mb-3 fixed-top" style="background-color: #6070FB; ">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MACHINDIA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1" >
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index" style="color: #fff;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Location" asp-action="Index" style="color: #fff;">Location</a>
+                        </li>
+
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("usr_role") != "pdmin" || HttpContextAccessor.HttpContext.Session.GetString("usr_role") != "sdmin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="VoiceCall" asp-action="Index" style="color: #fff;">Video</a>
+                            </li>
+                        }
+
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("usr_role") == "pdmin" || HttpContextAccessor.HttpContext.Session.GetString("usr_role") == "sdmin")
+                        {
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                                    Communication
+                                </a>
+                                <ul class="dropdown-menu" style="background-color: #6070FB;color: #fff">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="VoiceCall"
+                                        asp-action="Index">voice</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Videoview"
+                                        asp-action="Index">video</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                                Report
+                            </a>
+                            <ul class="dropdown-menu" style="background-color: #6070FB;color: #fff">
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Group"
+                                       asp-action="Index">Group</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Organization"
+                                       asp-action="Index">Organization</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                       
+                       @*  <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Index">Location</a>
+                        </li> *@
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Query" asp-action="Index" style="color: #fff;">Query</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle "
+                               data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                                Analysis
+                            </a>
+                            <ul class="dropdown-menu" style="background-color: #6070FB;" >
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Rank"
+                                       asp-action="Index">Rank</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Offline"
+                                       asp-action="Index">Offline</a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+                       
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle "
+                               data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                                Gps
+                            </a>
+                            <ul class="dropdown-menu" style="background-color: #6070FB;">
+                                <li>
+                                    <a class="dropdown-item" asp-controller="GPSONLINE"
+                                       asp-action="Index">Shift Running/Distance Report</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Gps24"
+                                       asp-action="Index">Daily Running/Distance Report</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Gpslog"
+                                       asp-action="Index">Gps Log</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle "
+                               data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                                Alarm
+                            </a>
+                            <ul class="dropdown-menu" style="background-color: #6070FB;">
+
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Alarm24"
+                                       asp-action="Index">Daily Alarm</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+
+
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("usr_role") == "sdmin")
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                                    Management
+                                </a>
+                                <ul class="dropdown-menu" style="background-color: #6070FB;">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Auth" asp-action="Index">Authentication</a>
+                                    </li>
+                                   @*  <li>
+                                        <a class="dropdown-item" asp-controller="Video" asp-action="Index">Video</a>
+                                    </li> *@
+                                </ul>
+                            </li>
+                        }
+
+
+
+
+                        @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>*@
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index" style="color: #fff;"> <i class="bi bi-person-circle" style="font-size:16px;font-style:normal">@HttpContextAccessor.HttpContext.Session.GetString("usr_id")</i></a>
+                            
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link" asp-area="" id="logoutButton" style="color: #fff;"> <i class="bi bi-box-arrow-right" style="font-size:16px;font-style:normal">Logout</i></a>
+
+
+                            
+                            
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted fixed-bottom" style="position:fixed;background-color: #343a40;">
+        <div class="container">
+            &copy; 2024 - CVGHMI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+
+
+
+    
+
+
+
+    @Html.Partial("_Logout.cshtml")
+   
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+   
+       
+
+
+    <script nonce='@Context.Items["CSPNonce"]'>
+        // Function to show modal on logout click
+        document.getElementById('logoutButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link action
+            $('#logout').modal('show'); // Show modal
+        });
+
+
+
+        function logout()
+        {
+           // alert("Log out called");
+            //return RedirectToAction("Index", "Login");
+            window.location.href = "/Logout";
+
+        }
+        </script>
+
+</body>
+</html>

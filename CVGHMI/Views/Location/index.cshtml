@@ -1,0 +1,684 @@
+﻿@*@model CVGHMI.Models.Location.Profile*@
+
+@model CVGHMI.Models.LocData
+
+<link rel="stylesheet" href="~/lib/leaflet/dist/leaflet.css"  />
+<script src="~/lib/leaflet/dist/leaflet.js" ></script>
+
+<link rel="stylesheet" href="~/css/location.css" />
+<link rel="stylesheet" href="~/lib/choices.js/public/assets/styles/choices.min.css" />
+
+
+@{
+    ViewData["Title"] = "Location";
+}
+
+
+
+@*<div id="map" style="width: 100%; height: 400px;"></div>*@
+
+<style>
+
+    #divddlorg .choices {
+        z-index: 10;
+    }
+
+    #divddlalarmtype .choices
+    {
+        z-index: 2;
+    }
+    .down .choices
+    {
+        z-index: 2;
+    }
+
+/*     .choices__list--dropdown {
+        z-index: 2;
+    }
+
+    #ddlorg .choices__list--dropdown {
+        z-index: 9999 !important; /* Ensure it overlays other content */
+   /* } */
+</style>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="map" style="width:100%"></div>
+
+        </div>
+
+        @* <div class="col-md-2">
+
+            <div class="listcontainer" id="vehlist" style="padding: 6px;border-radius: 10px;">
+
+                <label for="cars" style="font-weight:bold; text-align: center; width: 100%;">Select Organization</label>
+
+                <select id="ddlorg" onchange="ddlchange()" style="width:100%;height: 30px; border-radius: 5px; background-color: white; margin-top: 5px; margin-bottom: 5px;">
+                    <option value="Select Any One">Select Any One</option>
+                    @foreach (var ownerInfo in Model.ownerInfos)
+                    {
+
+                        <option value="@ownerInfo.owner_id">@ownerInfo.owner_id</option>
+
+                    }
+                </select>
+                <ul id="vilist" class="list-group list-group-flush">
+                </ul>
+
+
+
+            </div>
+
+
+
+            <div class="twoway">
+                <li class="list-group-item" id="selveh"></li>
+                <button type="button" class="btn btn1">Call</button>
+                <button type="button" class="btn btn2">Reject</button>
+
+                <!-- <video  autoplay><source src="assests/zaqxsw.mp4" type="video/mp4"></video> -->
+            <img id="playButton" src="~/lib/location/Nt6v.gif" alt="Description of GIF">
+            </div>
+
+        </div> *@
+    </div>
+
+
+
+
+
+
+
+
+<div class="row" style="margin-top: 5px;margin-bottom: 50px;">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="frmdate">Vehicle No</label>
+                <input type="text" class="form-control" placeholder="Vehicle No" id="txtVehicleNo">
+
+            </div>
+            <div id="divddlorg" class="col-md-4">
+               
+                <label for="ddlorg">ORGANIZATION</label>
+                <select id="ddlorg" style="width:100%;height: 44px; border-radius: 5px; background-color: white;  z-index: 3;" multiple class="form-select">
+
+                    @foreach (var ownerInfo in Model.ownerInfos)
+                    {
+
+                        <option value="@ownerInfo.owner_id">@ownerInfo.owner_id</option>
+
+                    }
+                </select>
+
+
+
+
+            </div>
+            <div class="col-md-4">
+                <label for="frmdate">Speed</label>
+                <input type="number" class="form-control" placeholder="Speed" id="txtspeed">
+
+            </div>
+
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="row">
+            <div class="col-md-4 down" >
+                <label for="frmdate">Vehicle Type</label>
+                
+
+                <select id="ddlvtype" style="width:100%;height: 44px; border-radius: 5px; background-color: white;" multiple class="form-select">
+                    <option value="100 Ton Dumper">100 Ton Dumper</option>
+                    <option value="TSL HEMM">TSL HEMM</option>
+                    <option value="Tippers">Tippers</option>
+                    <option value="Outsourced HEMM">Outsourced HEMM</option>
+                    <option value="LMV">LMV</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Others">Others</option>
+
+                   
+
+                </select>
+
+            </div>
+            <div id="divddlalarmtype" class="col-md-4">
+
+                <label for="frmdate">Alarm Type</label>
+                @* <input type="text" class="form-control" placeholder="Alarm Type" id="txtAlarmType"> *@
+                <select id="ddltype" style="width:100%;height: 44px; border-radius: 5px; background-color: white;z-index:1" multiple class="form-select">
+                    <option value="Eye Closure">Eye Closure</option>
+                    <option value="Yawning">Yawning</option>
+                    <option value="Head Down">Head Down</option>
+                    <option value="Head Up">Head Up</option>
+                    <option value="Look Around">Look Around</option>
+                    <option value="No Driver Face">No Driver Face</option> 
+                    <option value="Telephone">Telephone</option>
+                    <option value="Smoking">Smoking</option>
+                    <option value="Seat Belt">Seat Belt</option>
+                    <option value="Driver abnormality alarm">Driver abnormality alarm</option>
+                    @* <option value="Probe blocking alarm">Probe blocking alarm</option> *@
+                    <option value="Occlusion">Occlusion</option>
+                    <option value="Look Down">Look Down</option>
+                    <option value="SOS">SOS</option>
+                    <option value="OverSpeed">OverSpeed</option>
+                    @* <option value="ALL">ALL</option> *@
+
+                </select>
+
+  
+            </div>
+
+
+            <div class="col-md-4 down">
+
+                <label for="frmdate">Priority</label>
+               
+                <select id="ddlptype" style="width:100%;height: 44px; border-radius: 5px; background-color: white;" multiple class="form-select">
+                    <option value="Critical">Critical</option>
+                    <option value="Warning">Warning</option>
+                    <option value="Others">Others</option>
+                    
+
+
+
+                </select>
+
+
+            </div>
+            
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card p-3 bk">
+                    <div class="d-flex flex-row mb-3">
+
+                        <div id="table-scroll" style="height: 600px !important" class="table-scroll">
+                            <table id="main_table" class="table table-striped main-table">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th scope="col">Vehicle No</th>
+                                        <th scope="col">Seq No</th>
+                                        <th scope="col">Priority</th>
+                                        <th scope="col">Organization</th>
+                                        <th scope="col">Azone</th>
+                                        <th scope="col">Czone</th> 
+                                        <th scope="col">Speed[KM/H]</th>
+                                        <th scope="col">Vehicle Type</th>
+                                        <th scope="col">Alarm Type</th>
+                                        <th scope="col">Alarm Date</th>
+                                        <th scope="col">Video</th>
+                                        <th scope="col">Pic</th>
+                                        <th scope="col">Map</th>
+                                      
+                                        <!--<th scope="col">Driver Name</th>-->
+
+
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody id="main_table_body">
+                                </tbody>
+                                <tfoot id="sub_table_foot">
+                                    <tr>
+
+                                        <th>Vehicle No</th>
+                                        <th>Seq No</th>
+                                        <th>Priority</th>
+                                        <th>Organization</th>
+                                         <th scope="col">Azone</th>
+                                        <th scope="col">Czone</th> 
+                                        <th>Speed</th>
+                                        <th>Maker Type</th>
+                                        <th>Alarm Type</th>
+                                        <th>Alarm Date</th>
+                                        <th>Video</th>
+                                        <th>Pic</th>
+                                        <th>Map</th>
+                                        
+                                        <!--<td>Driver Name</td>-->
+
+
+                                    </tr>
+
+
+
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+@Html.Partial("~/Views/Shared/messageinfo.cshtml")
+
+
+
+
+
+
+<script>
+    var clidText;
+    var flag=false;
+    function ddlchange() {
+        var dldata = $('#ddlorg').val();
+        // alert(dldata);
+        setlist(dldata)
+    }
+
+    if( $('#ddlorg option').length>1)
+    {
+    setlist($('#ddlorg option:eq(1)').val());
+    $('#ddlorg').prop('selectedIndex', 1);
+    }
+
+    function setlist(dldata) {
+        //alert(varorg.innerHTML);
+
+
+        $.ajax({
+            url: 'Data/GetDevice/' + dldata,
+            type: 'GET',
+            success: function (data) {
+                //alert(data);
+                var vilist = $('#vilist');
+                vilist.empty(); // Clear existing data
+
+                var lidata = "";
+                data.forEach(function (item) {
+                    lidata = lidata + `<li class="list-group-item card"  ><span class="sp_item" data-clientid="${item.clientid}"> ${item.plate_no}</span><input type='button' value='video' class='vidbtn' onclick="vid('${item.clientid}')"/> </li>`;
+
+
+
+                });
+                vilist.html(lidata);
+                vilist.find('.sp_item').click(function () {
+                    if (flag==true)
+                    {
+                        $('#infobody').text("Some one already initiated calling, First stop the calling");
+                        $('#infoLog').modal('show');
+                        //alert("Some One Already Initiated Calling First Stop The Calling");
+                    }
+                    else
+                    {
+                        flag=false;
+                    // Handle click event
+                    var eleValue = $(this).text().trim();
+                    //var clidText = $(this).parent().find('.clid').val().trim();
+                    clidText = $(this).data('clientid');
+                    //alert(clidText);
+                    $('#selveh').text(eleValue); // Set selected vehicle text
+                    }
+                });
+
+
+
+            },
+            error: function (xhr, status, error) {
+                // alert('Error: ' + error);
+            }
+        });
+
+
+    }
+
+
+    var str_array = '@Model.profile.profile_location';
+	var st = str_array.split(',');
+    var profile_id = '@Model.profile.profile_id';
+	//alert(st[0]);
+
+    const map = L.map('map').setView([st[0], st[1]], @Model.profile.profile_zoom_level);
+
+	//const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	//	maxZoom: 19,
+	//	attribution: '&copy; <a href="http://www.machindia.com">MACHINDIA</a>'
+	//}).addTo(map);
+
+
+	//const tiles= L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+	//	maxZoom: 20,
+	//	subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+ //       attribution: '&copy; <a href="http://www.machindia.com">MACHINDIA</a>'
+
+	//}).addTo(map);
+
+
+
+ //   // Street Layer
+ //   const streetLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+ //       maxZoom: 20,
+ //       subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+ //       attribution: '&copy; <a href="http://www.machindia.com">MACHINDIA</a>'
+ //   });
+
+
+
+    // Satellite Layer
+    const satelliteLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; <a href="http://www.machindia.com">MACHINDIA</a>'
+    }).addTo(map);
+
+    // Street Layer
+    const streetLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; <a href="http://www.machindia.com">MACHINDIA</a>'
+    });
+
+    // Layer control
+    const baseMaps = {
+        "Satellite": satelliteLayer,
+        "Street": streetLayer
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+
+
+
+    function makecallRequest(device_id) {
+        var url = 'Data/Call';
+        //var objdata = `{"cid":"${device_id}"}`;
+        //var requestData = { "cid": device_id };
+        var requestData = { cid: String(device_id) };
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+           
+            success: function (response) {
+                console.log('POST request successful');
+                console.log(response);
+                // Handle the response here
+            },
+            error: function (xhr, status, error) {
+                console.error('POST request failed');
+                // Handle errors here
+            }
+        });
+    }
+
+
+        function makecallEndRequest(device_id) 
+        {
+            var url = 'Data/CallEnd';
+            
+            var requestData = { cid: String(device_id) };
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: JSON.stringify(requestData),
+                contentType: 'application/json',
+
+                success: function (response) {
+                    console.log('POST request successful');
+                    console.log(response);
+                  
+                },
+                error: function (xhr, status, error) {
+                    console.error('POST request failed');
+                   
+                }
+            });
+
+
+
+    }
+
+
+    //Video Request For Start Streaming
+
+    function makevideoStartRequest(device_id) {
+        var url = 'Data/VideoStart';
+        
+        var requestData = { cid: String(device_id), channel: 1 };
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+
+            success: function (response) {
+                //console.log('POST request successful');
+                //console.log(response);
+                    //?VideoId =
+                window.open('video?VideoId=' + device_id + '-1');
+            },
+            error: function (xhr, status, error) {
+                console.error('POST request failed');
+               
+            }
+        });
+    }
+
+    //Video Request For End Streaming
+    function makevideoEndRequest(device_id) {
+        var url = 'Data/VideoEnd';
+       
+        var requestData = { cid: String(device_id), channel:1 };
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: JSON.stringify(requestData),
+            contentType: 'application/json',
+
+            success: function (response) {
+                console.log('POST request successful');
+                console.log(response);
+               
+            },
+            error: function (xhr, status, error) {
+                console.error('POST request failed');
+               
+            }
+        });
+    }
+
+
+
+
+	// //const marker = L.marker([51.5, -0.09]).addTo(map)
+	// //	.bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
+
+ //    var btn1 = document.querySelector(".btn1"); // Corrected selector for btn1
+ //    var btn2 = document.querySelector(".btn2"); // Corrected selector for btn2
+
+ //    // Add click event listener to the Call button
+ //    btn1.addEventListener("click", function () {
+ //       //alert(clidText);
+ //       var selve= $('#selveh').text();
+
+
+ //      if(selve=="")
+ //      {
+ //            $('#infobody').text("Please select vehicle plate after that call");
+ //            $('#infoLog').modal('show');
+
+
+ //          //alert("please select vehicle plate after that call");
+
+ //      }
+ //      else if(flag==true)
+ //      {
+ //            $('#infobody').text("Calling is already started");
+ //            $('#infoLog').modal('show');
+ //            //alert("calling is already started");
+ //      }
+ //      else
+ //      {
+ //        flag=true;
+ //        makecallRequest(clidText);
+ //            startStreaming();
+ //            startRecording();
+ //        document.getElementById("playButton").style.display = "block"; // Play the audio
+ //      }
+ //    });
+
+ //    // Add click event listener to the Reject button
+ //    btn2.addEventListener("click", function () {
+ //        var selve = $('#selveh').text();
+ //        if (selve == "")
+ //        {
+ //            $('#infobody').text("Plate no is not selected please select");
+ //            $('#infoLog').modal('show');
+ //            //alert("Plate no is not selected please select");
+ //        }
+ //        else if(flag==false)
+ //        {
+ //            $('#infobody').text("Reject is already pressed");
+ //            $('#infoLog').modal('show');
+
+ //            //alert("Reject is already pressed");
+
+ //        }
+ //        else
+ //        {
+ //        flag=false;
+ //        document.getElementById("playButton").style.display = "none"; // Pause the audio
+ //        makecallEndRequest(clidText);
+ //            stopRecording();
+ //        stopStreaming();
+
+ //        }
+ //    });
+ //    //video call method on button click
+    function vid(data)
+    {
+       // alert(data);
+        makevideoStartRequest(data);
+
+
+    }
+
+
+
+
+    $(document).ready(function () {
+
+       
+
+
+        // Function to handle the POST request
+        function makePostRequest() {
+            var url = 'http://127.0.0.1:8000/device/9101';
+            var requestData = {
+                "clientId": "791074535102",
+                "ip": "103.30.118.143",
+                "tcpPort": 6603,
+                "udpPort": 6603,
+                "channelNo": 1,
+                "mediaType": 0,
+                "streamType": 0
+            };
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(requestData),
+                success: function (response) {
+                    console.log('POST request successful');
+                    console.log(response);
+                    // Handle the response here
+                },
+                error: function (xhr, status, error) {
+                    console.error('POST request failed');
+                    // Handle errors here
+                }
+            });
+        }
+
+
+
+
+
+
+        // Execute the POST request on button click
+        $('#postButton').click(function () {
+            makePostRequest();
+        });
+    });
+</script>
+<script>
+    var statusLoad;
+    function load_status() {
+        function parseLog(logTimeStr) {
+            var isoString = logTimeStr.replace(' ', T);
+            return new Date(isoString);
+        }
+        var online = 0;
+        var offline = 0;
+        var objXMLHttpRequest = new XMLHttpRequest();
+        objXMLHttpRequest.onreadystatechange = function () {
+            if (objXMLHttpRequest.onreadystatechange === 4) {
+                if (objXMLHttpRequest.status === 200) {
+                    var obj = JSON.parse(objXMLHttpRequest.responseText);
+                    var currentTime = new Date();
+                    var tolerance = 60 * 1000;
+                    for (var i = 0; i < obj.length; i++) {
+                        var log_time = (obj[i].log_time);
+                        var plate_no = (obj[i].plate_no);
+                        var logDate = parseLogTime(log_time);
+                        var listItems = document.querySelectorAll('#vilist .list-group-item .sp_item')
+                        listItems.forEach(function (item) {
+                            if (item.textContent.trim() === plate_no) {
+                                var timeDifference = Math.abs(logDate - currentTime);
+                                if (timeDifference <= tolerance) {
+                                    item.style.color = 'green';
+                                    online++;
+                                }
+                                else {
+                                    item.style.color = 'grey';
+                                    offline++;
+                                }
+                            }
+                        });
+                    }
+                    console.log("offline: " + offline + "online: " + online);
+                    statusload = setInterval(load_status, 10000);
+                }
+            }
+        }
+        var apiUrl = `Data/GetGps/${encodeURIComponent(profile_id)}`;
+        objXMLHttpRequest.open('Get',apiUrl);
+        objXMLHttpRequest.send();
+    }
+    load_status();
+    $('.leaflet-control-attribution').remove();
+</script>
+<script src="~/lib/location/modifyed-pcm-player.js"></script>
+<script src="~/lib/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="~/lib/location/loc.js"></script>
+
+
+
+

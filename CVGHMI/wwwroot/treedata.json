@@ -1,0 +1,40 @@
+[
+  {
+    "id": "demo_root_1",
+    "text": "TSL_JEIM",
+    "type": "root",
+    "children": [
+      {
+        "id": "child_1_01",
+        "text": "Child 1-1",
+        "type": "child",
+        "children": false
+      },
+      {
+        "id": "child_1_02",
+        "text": "Child 1-2",
+        "type": "child",
+        "children": false
+      }
+    ]
+  },
+  {
+    "id": "demo_root_2",
+    "text": "TSL_NIM",
+    "type": "root",
+    "children": [
+      {
+        "id": "child_2_01",
+        "text": "Child 2-1",
+        "type": "child",
+        "children": false
+      },
+      {
+        "id": "child_2_02",
+        "text": "Child 2-2",
+        "type": "child",
+        "children": false
+      }
+    ]
+  }
+]

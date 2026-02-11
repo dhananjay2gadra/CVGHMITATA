@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Audio Processing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        #controls {
+            width: 20%;
+        }
+
+        #controls label {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #controls input[type="range"] {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #controls input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #controls input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        #visualization {
+            width: 70%;
+            text-align: center;
+        }
+
+        canvas {
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <!-- Controls for audio processing -->
+    <div id="controls">
+        <h3>Audio Controls</h3>
+
+        <label for="noiseThreshold">Noise Threshold:</label>
+        <input type="range" id="noiseThreshold" min="-80" max="0" step="1" value="-50">
+
+        <label for="compressionThreshold">Compression Threshold:</label>
+        <input type="range" id="compressionThreshold" min="-60" max="0" step="1" value="-20">
+
+        <input type="button" id="startBtn" value="Start Audio Processing">
+        <input type="button" id="stopBtn" value="Stop Audio Processing">
+    </div>
+
+    <!-- Real-time audio spectrum visualization -->
+    <div id="visualization">
+        <h3>Audio Spectrum Visualization</h3>
+        <canvas id="spectrumCanvas"></canvas>
+    </div>
+</div>
+
+<!-- Include DSP.js and custom script -->
+<script src="dsp-min.js"></script>
+<script src="audio-dashboard.js"></script>
+<script src="alawmulaw.js"></script>
+</body>
+</html>

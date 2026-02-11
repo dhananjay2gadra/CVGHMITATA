@@ -1,0 +1,633 @@
+﻿@model List<CVGHMI.Models.Dashorgalarminfo>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--@ViewBag.usr_id-->
+
+
+<script>
+    var profile_id= '@ViewBag.profile_id';
+
+    </script>
+
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-md-3 my-1 zoom">
+         
+            <div class="card " style="color: #fff; background-color: #abc4ff;">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-4 ">
+                    <i class="bi bi-buildings-fill" style="font-size: 50px;color:#4f4789"></i>
+                        </div>
+                        <div class="col-8" style="display: flex; align-items: center; text-align: left;">
+                    <p class="card-text" style="color: #fff;font-weight: 600;text-align: center;">ORGANIZATION<br />
+                                <span id="txttoalorg">@ViewBag.owner </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-3 my-1 zoom">
+         
+            <div class="card" style="color: #fff; background-color: #778da9;">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="bi bi-alarm-fill" style="font-size: 50px;color:#e05260"></i>
+                        </div>
+                        <div class="col-8" style="display: flex; align-items: center; text-align: left;">
+                    <p class="card-text" style="color: #fff;font-weight: 600;text-align: center;">ALARM<br />
+                                <span id="txttoalorg" > @ViewBag.totalalarm</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 my-1 zoom">
+
+            <div class="card" style="color: #fff; background-color: #da7474;">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="bi bi-car-front-fill" style="font-size: 50px;color:#6e2921"></i>
+                        </div>
+                        <div class="col-8" style="display: flex; align-items: center; text-align: left;">
+                            <p class="card-text" style="color: #fff;font-weight: 600;text-align: center;">
+                                OFFLINE<br />
+                                <span id="doffline">@ViewBag.doffline</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        
+
+        <div class="col-md-3 my-1 zoom">
+
+            <div class="card" style="color: #fff; background-color:#7a9e95;">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="bi bi-car-front-fill" style="font-size: 50px;color:#3c7063"></i>
+                        </div>
+                        <div class="col-8" style="display: flex; align-items: center; text-align: left;">
+                            <p class="card-text" style="color: #fff;font-weight: 600; text-align: center;">
+                                VEHICLE<br />
+                                <span id="nodevice">@ViewBag.nodevice</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="col-md-3 my-1 zoom">
+
+            <div class="card bg-primary">
+                <div class="card-body text-center">
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="bi bi-car-front" style="font-size: 50px; color:red"></i>
+                        </div>
+                        <div class="col-8" style="display: flex; align-items: center; text-align: left;">
+                            <p class="card-text">
+                                Offline Device<br />
+                                <span id="txttoalorg" class="text-black-50">00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 5px;">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card p-3 bk">
+                        <div class="d-flex flex-row mb-3">
+
+                            <div id="table-scroll" class="table-scroll">
+                                <table id="alarmTable" class="table table-striped main-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 200px;" >Organization</th>
+                                            <th scope="col">Total Device</th>
+                                            <th scope="col">Offline Device</th>
+                                            <th scope="col">Total Alarm </th>
+
+
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody >
+
+                                        @foreach (var alarmInfo in Model)
+                                        {
+                                            <tr>
+                                                <td style="cursor:pointer;" onclick="setTabel(this)">@alarmInfo.owner_id</td>
+                                               @*  <td>@alarmInfo.devices</td> *@
+                                                <td>@alarmInfo.devices.Split('/')[1]</td>
+                                                <td>@alarmInfo.devices.Split('/')[0]</td>
+                                                <td>@alarmInfo.alarm</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot id="main_table_tfoot">
+                                    </tfoot>
+                                </table>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row" style="justify-content:center;">
+                            <div class="col-3" style="text-align:center">
+                                <button id="btndownload" class="btn btn-primary">Download</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 5px;">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card p-3 bk">
+                        <div class="d-flex flex-row mb-3">
+
+                            <div id="table-scroll" class="table-scroll">
+                                <table id="main-table" class="table table-striped main-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="width: 200px;">Plate No</th>
+                                            <th scope="col">Organization</th>
+                                             <th scope="col">Azone</th> 
+                                             <th scope="col">Czone</th> 
+                                            @* <th scope="col">Mcard</th>  *@
+                                            <th scope="col">Last  Time</th>
+                                            <th scope="col">Last Alarm Time</th>
+                                            <th scope="col">Total Alarm </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="main_table_body">
+                                      
+                                    </tbody>
+                                    <tfoot id="main_table_tfoot">
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row" style="justify-content:center;">
+                            <div class="col-3" style="text-align:center">
+                                <button id="btnalarmdownload" class="btn btn-primary">Download</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+@Html.Partial("~/Views/Shared/_Alarm.cshtml")
+@Html.Partial("~/Views/Shared/_NoAlarm.cshtml")
+
+
+<script>
+        // Function to show modal on logout click
+      //  document.getElementById('logoutButton').addEventListener('click', function (event) {
+      //      event.preventDefault(); // Prevent default link action
+      //  $('#logout').modal('show'); // Show modal
+      //  });
+
+
+    function setTabel(varorg)
+    {
+        //alert(varorg.innerHTML);
+
+
+        $.ajax({
+            url: 'Data/GetVehicleOwnerData/' + varorg.innerHTML,
+            type: 'GET',
+            success: function (data) {
+                //alert(data);
+                var tableBody = $('#main_table_body');
+               tableBody.empty(); // Clear existing data
+
+
+                data.forEach(function (item) {
+
+                      const datve = item.plate_No.split(",");
+                      let ptno="";
+                      let azone="Not Found";
+                      let czone="Not Found";
+                      let mcard="Not Found";
+                      console.log("Dt"+datve);
+                      if(datve[0]!=null)
+                      {
+                          
+                          ptno=datve[0];
+                          ptno=ptno.trim();
+                          if(ptno==="")
+                          {
+                          ptno="Not Found";
+                          }
+                      }
+
+                      if(datve[1]!=null)
+                      {
+                          azone=datve[1];
+                           azone=azone.trim();
+                          if(azone==="")
+                          {
+                          azone="Not Found";
+                          }
+                      }
+
+                      if(datve[2]!=null)
+                      {
+                          czone=datve[2];
+                          czone=czone.trim();
+                          if(czone==="")
+                          {
+                          czone="Not Found";
+                          }
+                      }
+
+                       if(datve[3]!=null)
+                      {
+                          mcard=datve[3];
+                           mcard=mcard.trim();
+                          if(mcard==="")
+                          {
+                          mcard="Not Found";
+                          }
+                           if(mcard==="4100" || mcard==="4101")
+                          {
+                               mcard="Memory 1";
+                          }
+                          else if(mcard==="4102")
+                          {
+                             mcard="No Memory Card";
+                          }
+                          else  if(mcard==="6")
+                          {
+                             mcard="Memory 2";
+                          }
+                          else  if(mcard==="4")
+                          {
+                             mcard="Memory 1,Memory2";
+                          }
+                          else 
+                          {
+                              mcard="-";
+                          }
+                          
+                      }
+                     
+
+                    var ctime=item.log_time;
+
+                    ctime=ctime.replace(' ','T');
+                    console.log(ctime);
+                    const specificDate = new Date(ctime);
+                    const currentDate = new Date();
+
+                    const differenceInMilliseconds = currentDate - specificDate;
+                    const hours=differenceInMilliseconds / (1000 * 60 * 60);
+                   var str='';
+                        if (hours>8)
+                        {
+                        str='<td style="color:red;cursor:pointer" onclick="getAlarm(\'' + ptno + '\', ' + item.total + ')">' + ptno + '</td>' ;
+                        }
+                        else{
+                       str='<td  onclick="getAlarm(\'' + ptno + '\', ' + item.total + ')">' + ptno + '</td>' ;
+                        }
+                    var row = '<tr>' + str+
+                        
+                        '<td>' + item.owner_Id + '</td>' +
+                         '<td>' + azone + '</td>' +
+                         '<td>' +  czone + '</td>' +
+                        // '<td>' +  mcard + '</td>' +
+                        '<td>' + item.log_time + '</td>' +
+                        '<td>' + item.calarmtime + '</td>' +
+                        '<td>' + item.total + '</td>' +
+                        '</tr>';
+                    tableBody.append(row);
+                });
+
+
+
+                // Assuming the response is a JSON object or array
+               // for (var key in data) {
+                    //alert(data[0].plate_no);
+              //  }
+            },
+            error: function (xhr, status, error) {
+               // alert('Error: ' + error);
+            }
+        });
+
+
+    }
+
+    // function getAlarm(plate,noofalarm)
+    // {
+    //    // alert(noofalarm);
+    //    if(noofalarm==0)
+    //    {
+    //       // alert('Sorry No Alarm');
+
+    //         $('#infoModal').modal('show');
+    //    }
+    //    else
+    //    {
+    //         //VacAlarmInfo
+
+    //         $.ajax({
+    //             url: 'Data/GetVehicleData/' + plate,
+    //             type: 'GET',
+    //             success: function (data) {
+    //                 //alert(data);
+    //                 var tableBody = $('#Vac_Alarm_body');
+    //                 tableBody.empty(); // Clear existing data
+
+
+    //                 data.forEach(function (item) {
+    //                     var row = '<tr>' +
+
+
+    //                         '<td>' + item.type + '</td>' +
+    //                         '<td>' + item.devicetime + '</td>' +
+    //                          '<td> <a href="https://10.137.9.50/jt_data/alarm_file/>' + item.path + '/' + item.vid1 + '" target="_blank">Video</a></td>' +
+    //                         '<td> <a href="https://10.137.9.50/jt_data/alarm_file/>' + item.path + '/' + item.pic1 + '" target="_blank">Picture</a></td>' +
+    //                          //'<td>' + item.path + '</td>' +
+    //                         // '<td>' + item.path + '</td>' +
+    //                         '</tr>';
+    //                     tableBody.append(row);
+    //                 });
+    //             },
+    //             error: function (xhr, status, error) {
+    //                 // alert('Error: ' + error);
+    //             }
+    //         });
+
+
+
+    //         $('#VacAlarmInfo').modal('show');
+    //    }
+    // }
+        </script>
+<script>
+    function getFirstColumnFirstRowValue() {
+        var table = document.getElementById("alarmTable");
+        if (table && table.rows.length > 1) { // Ensure table and rows exist
+            var firstRow = table.rows[1]; // Index 1 because index 0 is the header row
+            var firstColumnValue = firstRow.cells[0].innerText; // Get the value from the first column
+           
+            return firstColumnValue;
+        } else {
+           
+            return null;
+        }
+    }
+    $.ajax({
+        url: 'Data/GetVehicleOwnerData/' + getFirstColumnFirstRowValue(),
+            type: 'GET',
+            success: function (data) {
+                //alert(data);
+                var tableBody = $('#main_table_body');
+               tableBody.empty(); // Clear existing data
+
+
+                data.forEach(function (item) {
+
+
+                      const datve = item.plate_No.split(",");
+                      let ptno="";
+                      let azone="Not Found";
+                      let czone="Not Found";
+                      let mcard="Not Found";
+                      console.log("Dt"+datve);
+                      if(datve[0]!=null)
+                      {
+
+                          ptno=datve[0];
+                          ptno=ptno.trim();
+                          if(ptno==="")
+                          {
+                          ptno="Not Found";
+                          }
+                      }
+
+                      if(datve[1]!=null)
+                      {
+                          azone=datve[1];
+                           azone=azone.trim();
+                          if(azone==="")
+                          {
+                          azone="Not Found";
+                          }
+                      }
+
+                      if(datve[2]!=null)
+                      {
+                          czone=datve[2];
+                          czone=czone.trim();
+                          if(czone==="")
+                          {
+                          czone="Not Found";
+                          }
+                      }
+
+                       if(datve[3]!=null)
+                      {
+                          mcard=datve[3];
+                           mcard=mcard.trim();
+                          if(mcard==="")
+                          {
+                          mcard="Not Found";
+                          }
+                          if(mcard==="4100" || mcard==="4101")
+                          {
+                               mcard="Memory 1";
+                          }
+                          else if(mcard==="4102")
+                          {
+                             mcard="No Memory Card";
+                          }
+                          else if(mcard==="6")
+                          {
+                             mcard="Memory 2";
+                          }
+                          else if(mcard==="4")
+                          {
+                             mcard="Memory 1,Memory2";
+                          }
+                          else
+                          {
+                            mcard="-";
+                          }
+
+                      }
+
+
+
+                    var ctime=item.log_time;
+
+                    ctime=ctime.replace(' ','T');
+                    console.log(ctime);
+                    const specificDate = new Date(ctime);
+                    const currentDate = new Date();
+
+                    const differenceInMilliseconds = currentDate - specificDate;
+                    const hours=differenceInMilliseconds / (1000 * 60 * 60);
+                   var str='';
+                        if (hours>8)
+                        {
+                        str='<td style="color:red;cursor:pointer;" onclick="getAlarm(\'' + ptno + '\', ' + item.total + ')">' + ptno + '</td>' ;
+                        }
+                        else{
+                       str='<td  onclick="getAlarm(\'' + ptno + '\', ' + item.total + ')">' + ptno + '</td>' ;
+                        }
+                    var row = '<tr>' + str+
+                        
+                        '<td>' + item.owner_Id + '</td>' +
+                         '<td>' + azone + '</td>' +
+                         '<td>' +  czone + '</td>' +
+                        // '<td>' +  mcard + '</td>' +
+                        '<td>' + item.log_time + '</td>' +
+                        '<td>' + item.calarmtime + '</td>' +
+                        '<td>' + item.total + '</td>' +
+                        '</tr>';
+                    tableBody.append(row);
+                });
+
+
+
+                // Assuming the response is a JSON object or array
+               // for (var key in data) {
+                    //alert(data[0].plate_no);
+              //  }
+            },
+            error: function (xhr, status, error) {
+               // alert('Error: ' + error);
+            }
+        });
+</script>
+<script>
+    let dataArray = [];
+    function extractFirstColumnData() {
+        let table = document.getElementById("alarmTable");
+        let rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+       
+
+        for (let i = 0; i < rows.length; i++) {
+
+            let firstColumnData = rows[i].getElementsByTagName("td")[0].textContent.trim();
+            dataArray.push({ data: firstColumnData });
+        }
+
+        console.log(dataArray); // Now you can use this array as needed
+        
+    }
+
+    // Call the function or link it to an event
+    extractFirstColumnData();
+
+
+        function downloadCSV(filename,queryselect) {
+        // Get the table data
+        var rows = document.querySelectorAll(queryselect);
+        var csvContent = "";
+
+        rows.forEach(function (row) {
+            var cols = row.querySelectorAll("td, th");
+            var rowData = Array.from(cols).map(function (col) {
+                return `"${col.innerText.replace(/"/g, '""')}"`;
+            }).join(",");
+            csvContent += rowData + "\r\n";
+        });
+
+        // Create a Blob from the CSV data
+        var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        var url = URL.createObjectURL(blob);
+
+        // Create a link element
+        var link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", filename);
+
+        // Append the link to the document body and click it
+        document.body.appendChild(link);
+        link.click();
+
+        // Remove the link from the document
+        document.body.removeChild(link);
+    }
+
+        $("#btndownload").click(function () {
+        downloadCSV("ownerlistwithalarm.csv","#alarmTable tr");
+    });
+
+
+    
+
+    $("#btnalarmdownload").click(function () {
+        downloadCSV("vehiclealarmlist.csv","#main-table tr");
+    });
+
+
+</script>

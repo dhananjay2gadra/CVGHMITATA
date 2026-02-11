@@ -1,0 +1,137 @@
+﻿
+@model List<CVGHMI.Models.Organization.OwnerInfo>
+
+<!--@ViewBag.usr_id-->
+@{
+	ViewData["Title"] = "Organization";
+}
+
+
+
+<script>
+	var profile_id = '@ViewBag.profile_id';
+
+</script>
+
+
+
+<link rel="stylesheet" href="CVGHMI.styles.css">
+
+<div class="row justify-content-md-center">
+
+	@* <div class=" col-lg-2 ">
+		<div class="form-control-wrapper">
+			<span>ORGANIZATION</span>
+		</div>
+	</div> *@
+
+	<div class="col-lg-3">
+		<!--   <div class="form-control-wrapper"> -->
+		<!--  <span class="multi-select"></span>-->
+		<!-- <input type="text" id="org_id" class="form-control"> -->
+		<!-- </div>-->
+
+
+
+		<label for="ddlorg">ORGANIZATION</label>
+		<select id="ddlorg" style="width:100%;height: 44px; border-radius: 5px; background-color: white;">
+
+			@foreach (var ownerInfo in Model)
+			{
+
+				<option value="@ownerInfo.owner_id">@ownerInfo.owner_id</option>
+				
+			}
+		</select>
+	</div>
+
+
+	<div class="col-lg-3">
+		
+		<div class="form-group">
+			<label for="frmdate">FROM DATE</label>
+
+			<input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="frmdate">
+		</div>
+
+
+	</div>
+
+
+
+
+	<div class="col-lg-3">
+
+		<div class="form-group">
+			<label for="frmdate">TO DATE</label>
+			<input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="todate">
+		</div>
+
+
+	</div>
+
+</div>
+
+
+
+
+<div class="row justify-content-md-center">
+	<div class="col-lg-1 col-md-12 col-sm-12 ">
+		@* <button type="button" id="btnsearch" class="btn btn-primary my-1">Search</button> *@
+		<input type="button" id="btnsearch" class="my-1" value="Search" />
+	</div>
+</div>
+
+
+<div class="row justify-content-md-center">
+	<div class="col-md-6 container mt-5">
+		<div id="alarmsum" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+
+	<div class="col-md-6 container mt-5">
+		<div id="top10ve" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+
+</div>
+
+<div class="row justify-content-md-center">
+	<div class="col-md-12 container mt-5">
+		<div id="container" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+
+</div>
+
+
+<div class="row ">
+	<div class="col-md-12 container mt-5">
+		<div id="ownersdtalarm" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+
+</div>
+
+
+
+<script>
+	flatpickr("#frmdate", {
+		enableTime: true,
+		dateFormat: "Y-m-d H:i:S",
+		time_24hr: true,
+		defaultHour: 0,
+		enableSeconds: true,
+	});
+
+	flatpickr("#todate", {
+		enableTime: true,
+		dateFormat: "Y-m-d H:i:S",
+		time_24hr: true,
+		defaultHour: 0,
+		enableSeconds: true,
+	});
+</script>
+
+<script src="~/lib/highcharts/7.1.2/highcharts.js"></script>
+<script src="~/lib/highcharts/7.1.2/modules/exporting.js"></script>
+<script src="~/lib/highcharts/7.1.2/modules/export-data.js"></script>
+<script src="~/lib/highcharts/7.1.2/modules/accessibility.js"></script>
+<script src="~/lib/organization/or.js"></script>
+

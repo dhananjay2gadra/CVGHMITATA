@@ -1,0 +1,74 @@
+﻿<!-- Modal Alarm Info -->
+<div class="modal fade" id="VacAlarmInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content ">
+            <div class="modal-header" style="background-color:rgb(96, 112, 251);">
+                <h5 class="modal-title" id="VacAlarmInfotitle" style="color:#FFF">MACHINDIA</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               
+            </div>
+            <div class="modal-body">
+
+
+                <div class="row card p-3 bk" style="margin-bottom: 5px;margin-left:10px;margin-right: 10px;">
+                    <div class="row" style="padding: 1px;">
+               <div class="col-6">
+                  ORGANIZATION ID
+                   </div>
+                    <div class="col-6">
+                  ORGANIZATION NAME
+                   </div>
+                   </div>
+
+
+                       <div class="row" style="padding: 1px;">
+               <div class="col-6">
+                   <input type="text" id="txtorgid" width="100%" name="txtorgid"/>
+                   </div>
+
+                    <div class="col-6">
+                   <input type="text" id="txtorgname" width="100%" name="txtorgname"/>
+                   </div>
+
+                   </div>
+
+
+                    <div class="row justify-content-center" style="padding: 1px;">
+                        <div class="col-1">
+                         <input type="button" value="Save" />
+                         </div>
+                        </div>
+
+        </div>
+
+
+
+                <div id="table-scroll" class="table-scroll">
+                    <table id="Vac_Alarm" class="main-table">
+                        <thead>
+                            <tr>
+
+                                <th scope="col" style="width: 200px;">ORG ID</th>
+                                <th scope="col">ORG NAME</th>
+                                <th scope="col">CR DATE</th>
+                                 <th scope="col">OPERATION</th>
+
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="Vac_Alarm_body">
+                        </tbody>
+                        <tfoot id="Vac_Alarm_tfoot">
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+               @*  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button> *@
+                <input type="button" value="OK" data-bs-dismiss="modal" />
+            </div>
+        </div>
+    </div>
+</div>

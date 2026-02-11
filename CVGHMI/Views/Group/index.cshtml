@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Group";
+}
+
+<script>
+	var profile_id = '@ViewBag.profile_id';
+	var categories = @Html.Raw(Json.Serialize(ViewBag.Categories));
+	var seriesData = @Html.Raw(Json.Serialize(ViewBag.SeriesData));
+
+</script>
+
+
+
+<div class="row justify-content-md-center justify-content-center">
+
+
+
+		<div class="col-lg-4">
+
+		<div class="form-group">
+
+			<label for="frmdate">From Date</label>
+			<input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="frmdate">
+		</div>
+
+
+	</div>
+
+
+
+	
+	<div class="col-lg-4">
+		
+		<div class="form-group">
+			<label for="todate">To Date</label>
+			<input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="todate">
+       </div>
+
+	
+	</div>
+
+</div>
+
+
+
+
+<div class="row justify-content-md-center justify-content-center">
+	<div class="col-lg-1 col-md-12 col-sm-12 ">
+		@* <button type="button" id="btnsearch" class="btn btn-secondary my-1" >Search</button> *@
+		<input type="button" id="btnsearch" value="Search" class="my-1" />
+	</div>
+</div>
+
+
+
+<div class="row justify-content-md-center">
+	<div class="col-md-6 container mt-5">
+		<div id="alarmsum" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+
+	<div class="col-md-6 container mt-5">
+		<div id="top10ve" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+
+</div>
+
+
+
+<div class="row justify-content-md-center">
+	<div class="col-md-12 container mt-5">
+		<div id="container" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+	
+</div>
+
+
+<div class="row ">
+	<div class="col-md-12 container mt-5">
+		<div id="ownersdtalarm" style="width: 100%; height: 100%; margin: 0 auto"></div>
+	</div>
+	
+</div>
+
+
+<script>
+	flatpickr("#frmdate", {
+		enableTime: true,
+		dateFormat: "Y-m-d H:i:S",
+		time_24hr: true,
+		defaultHour: 0,
+		enableSeconds: true,
+	});
+
+	flatpickr("#todate", {
+		enableTime: true,
+		dateFormat: "Y-m-d H:i:S",
+		time_24hr: true,
+		defaultHour: 0,
+		enableSeconds: true,
+	});
+</script>
+<script src="~/lib/highcharts/7.1.2/highcharts.js"></script>
+<script src="~/lib/highcharts/7.1.2/modules/exporting.js"></script>
+<script src="~/lib/highcharts/7.1.2/modules/export-data.js"></script>
+<script src="~/lib/highcharts/7.1.2/modules/accessibility.js"></script>
+
+<script src="~/lib/group/gp.js"></script>
+
+
+

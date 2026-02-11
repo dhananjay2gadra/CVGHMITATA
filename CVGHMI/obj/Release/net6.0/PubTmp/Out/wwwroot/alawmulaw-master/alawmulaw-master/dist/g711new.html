@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket G.711 A-law Audio with Resampling</title>
+</head>
+<body>
+    <script src="alawmulaw.js"></script>
+    <script>
+        const TARGET_SAMPLE_RATE = 8000; // Desired sample rate for G.711 A-law
+        const AMPLITUDE_THRESHOLD = 0.02;//1; // Set your desired amplitude threshold
+        const BAND_PASS_FREQUENCY = 3000; // Center frequency for the band-pass filter
+        const BAND_PASS_Q = 1; // Quality factor for the band-pass filter
+        let websocket;
+
+        // Step 1: Capture Audio from the Microphone at default sample rate
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(function(stream) {
+                const audioContext = new AudioContext(); // Use default sample rate
+                const mediaStreamSource = audioContext.createMediaStreamSource(stream);
+
+                // Create a band-pass filter
+                const bandPassFilter = audioContext.createBiquadFilter();
+                bandPassFilter.type = 'bandpass';
+                bandPassFilter.frequency.value = BAND_PASS_FREQUENCY;
+                bandPassFilter.Q.value = BAND_PASS_Q;
+
+                const processor = audioContext.createScriptProcessor(1024, 1, 1);
+
+                processor.onaudioprocess = function(event) {
+                    const inputBuffer = event.inputBuffer.getChannelData(0); // Get audio data from the buffer (channel 0)
+                    let downsampledBuffer = downsampleBuffer(inputBuffer, audioContext.sampleRate, TARGET_SAMPLE_RATE);
+
+                    // Calculate the amplitude of the audio
+                    const amplitude = Math.max(...downsampledBuffer.map(Math.abs));
+
+                    // Send audio only if the amplitude exceeds the threshold
+                    if (amplitude > AMPLITUDE_THRESHOLD) {
+                        // Convert from Float32Array to Int16Array (required for G.711A encoding)
+                        let pcm16Array = new Int16Array(downsampledBuffer.length);
+                        for (let i = 0; i < downsampledBuffer.length; i++) {
+                            pcm16Array[i] = Math.max(-1, Math.min(1, downsampledBuffer[i])) * 32767;
+                        }
+
+                        // Step 3: Encode PCM to G.711A (A-law)
+                        let encoded = alawmulaw.alaw.encode(pcm16Array);
+
+                        // Step 4: Send Encoded Data over WebSocket
+                        if (websocket && websocket.readyState === WebSocket.OPEN) {
+                            websocket.send(encoded); // Send encoded data as binary over WebSocket
+                        }
+                    }
+                };
+
+                // Connect the audio nodes
+                mediaStreamSource.connect(bandPassFilter);
+                bandPassFilter.connect(processor);
+                processor.connect(audioContext.destination); // Keep audio node chain alive
+            })
+            .catch(function(err) {
+                console.error('Error accessing microphone', err);
+            });
+
+        // Step 2: Open WebSocket Connection
+        websocket = new WebSocket('wss://dfmsmi.corp.tatasteel.com/audio_in');
+        websocket.binaryType = 'arraybuffer';
+
+        websocket.onopen = function() {
+            console.log('WebSocket is connected');
+        };
+
+        websocket.onclose = function() {
+            console.log('WebSocket is closed');
+        };
+
+        websocket.onerror = function(error) {
+            console.error('WebSocket error:', error);
+        };
+
+        // Step 3: Downsample Buffer
+        function downsampleBuffer(buffer, sampleRate, targetSampleRate) {
+            if (targetSampleRate >= sampleRate) {
+                throw new Error('Target sample rate should be lower than original sample rate');
+            }
+
+            const sampleRateRatio = sampleRate / targetSampleRate;
+            const newLength = Math.round(buffer.length / sampleRateRatio);
+            const result = new Float32Array(newLength);
+            let offsetResult = 0;
+            let offsetBuffer = 0;
+
+            while (offsetResult < result.length) {
+                const nextOffsetBuffer = Math.round((offsetResult + 1) * sampleRateRatio);
+                let accum = 0, count = 0;
+                for (let i = offsetBuffer; i < nextOffsetBuffer && i < buffer.length; i++) {
+                    accum += buffer[i];
+                    count++;
+                }
+                result[offsetResult] = accum / count;
+                offsetResult++;
+                offsetBuffer = nextOffsetBuffer;
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

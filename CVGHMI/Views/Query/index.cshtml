@@ -1,0 +1,211 @@
+﻿@{
+    ViewData["Title"] = "Query";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<style>
+	.choices{
+		z-index:2;
+	}
+</style>
+
+<div class="card" style="padding:10px">
+
+<div class="row" style="margin-bottom:2%">
+	@* <div class=" col-lg-2 ">
+		<div class="form-control-wrapper">
+			<span id="menuid">ORGANIZATION</span>
+		</div>
+	</div> *@
+
+	<div class="col-lg-6">
+		<!--   <div class="form-control-wrapper"> -->
+		<!--  <span class="multi-select"></span>-->
+		<!-- <input type="text" id="org_id" class="form-control"> -->
+		<!-- </div>-->
+
+
+
+			<label for="ddlorg">ORGANIZATION</label>
+			<select id="ddlorg" style="width:100%;height: 44px; border-radius: 5px; background-color: white;" multiple class="form-select">
+
+			@foreach (var ownerInfo in Model)
+			{
+
+				<option value="@ownerInfo.owner_id">@ownerInfo.owner_id</option>
+
+			}
+		</select> 
+
+			
+			
+
+
+
+
+
+
+	</div>
+@* 	<div class="col-lg-2">
+		<div class="form-control-wrapper">
+			<span id="menuid">ALARM</span>
+		</div>
+	</div> *@
+
+
+
+
+	<div class="col-lg-6">
+			<div class="form-control-wrapper" >
+				<label for="ddlorg">ALARM</label>
+				<select id="ddltype" style="width:100%;height: 44px; border-radius: 5px; background-color: white;" multiple class="form-select">
+				<option value="Eye Closure">Eye Closure</option>
+				<option value="Yawning">Yawning</option>
+				 <option value="Head Down">Head Down</option>
+					<option value="Head Up">Head Up</option>
+					<option value="Look Around">Look Around</option>
+				 <option value="No Driver Face">No Driver Face</option> 
+				<option value="Telephone">Telephone</option>
+				<option value="Smoking">Smoking</option>
+				<option value="Seat Belt">Seat Belt</option>
+				<option value="Driver abnormality alarm">Driver abnormality alarm</option>
+				@* <option value="Probe blocking alarm">Probe blocking alarm</option> *@
+					 	<option value="Occlusion">Occlusion</option>
+				<option value="Look Down">Look Down</option>
+					<option value="SOS">SOS</option>
+					<option value="OverSpeed">OverSpeed</option>
+					@* <option value="ALL">ALL</option> *@
+
+				</select>
+
+		</div>
+	</div>
+</div>
+	<div class="row" style="margin-bottom:2%">
+	@* <div class=" col-lg-2 ">
+		<div class="form-control-wrapper">
+			<span id="menuid">FROM</span>
+		</div>
+	</div>  *@
+
+	<div class="col-lg-6" data-toggle='tooltip' data-placement='right' title='Click To Select From Date'>
+		<!-- <div class="form-control-wrapper"> -->
+			<label for="frmdate">FROM DATE</label>
+		<input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="frmdate">
+
+		<!-- </div> -->
+	</div>
+
+	
+	
+
+ 	@* <div class="col-lg-2">
+		<div class="form-control-wrapper">
+			<span id="menuid">TO</span>
+		</div>
+	</div> *@
+ 
+
+	<div class="col-lg-6">
+		<div class="form-control-wrapper" data-toggle='tooltip' data-placement='right' title='Click To Select To Date'>
+				<label for="frmdate">TO DATE</label>
+			<input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="todate">
+
+		</div>
+	</div>
+
+
+ 
+
+</div>
+
+
+
+<div class="row justify-content-md-center" style="margin-bottom:2%;margin-top:2%">
+
+
+	<div class="col-lg-2 col-md-12 col-sm-12  ">
+
+		 <button type="button" id="btnsearch" class="btn btn-primary" >Search
+				<span id="spnpress" class="spinner-border spinner-border-sm"></span>
+
+		 </button> 
+			@* <input type="button" id="btnsearch"  value="Search" /> *@
+
+
+	</div>
+	<div class="col-lg-2 col-md-12 col-sm-12  ">
+	 <button type="button" id="btndownload" class="btn btn-primary">Download</button> 
+			@* <input type="button" id="btndownload"  value="Download" /> *@
+	</div>
+
+
+
+
+
+</div>
+</div>
+
+<div class="row" style="margin-top: 5px;">
+    <div class="col-md-12">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card p-3 bk">
+                    <div class="d-flex flex-row mb-3">
+
+                        <div id="table-scroll" class="table-scroll">
+							<table id="tblmain" class="table table-striped main-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Vehicle No</th>
+
+                                        <th scope="col">Organization</th>
+                                        <th scope="col">Alarm Type</th>
+										<th scope="col">Speed</th>
+                                        <th scope="col">Alarm Date</th>
+
+                                        <th scope="col">Video</th>
+                                        <th scope="col">Pic</th>
+                                        <th scope="col">Map</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData">
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+<script>
+	flatpickr("#frmdate", {
+		enableTime: true,
+		dateFormat: "Y-m-d H:i:S",
+		time_24hr: true,
+		defaultHour: 0,
+		enableSeconds: true,
+	});
+
+	flatpickr("#todate", {
+		enableTime: true,
+		dateFormat: "Y-m-d H:i:S",
+		time_24hr: true,
+		defaultHour: 0,
+		enableSeconds: true,
+	});
+	let spnpress=document.getElementById("spnpress");
+	spnpress.classList.add('d-none');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="~/lib/query/qu.js"></script>

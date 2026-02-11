@@ -1,0 +1,1980 @@
+{
+  "version": 3,
+  "targets": {
+    "net10.0": {
+      "BouncyCastle.Cryptography/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Google.Api.Gax/4.8.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Api.Gax.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Api.Gax.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Api.Gax.Rest/4.8.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Api.Gax": "4.8.0",
+          "Google.Apis.Auth": "[1.67.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Api.Gax.Rest.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Api.Gax.Rest.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Apis/1.67.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis.Core": "1.67.0"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Apis.Auth/1.67.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.67.0",
+          "Google.Apis.Core": "1.67.0",
+          "System.Management": "7.0.2"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.Auth.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Auth.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Apis.Core/1.67.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Apis.Storage.v1/1.67.0.3365": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.67.0",
+          "Google.Apis.Auth": "1.67.0"
+        },
+        "compile": {
+          "lib/net6.0/Google.Apis.Storage.v1.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Google.Apis.Storage.v1.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Cloud.Storage.V1/4.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Api.Gax.Rest": "[4.8.0, 5.0.0)",
+          "Google.Apis.Storage.v1": "[1.67.0.3365, 2.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Cloud.Storage.V1.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Cloud.Storage.V1.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Google.Protobuf/3.26.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "highcharts.js/7.1.2": {
+        "type": "package"
+      },
+      "K4os.Compression.LZ4/1.3.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/K4os.Compression.LZ4.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/K4os.Compression.LZ4.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "K4os.Compression.LZ4.Streams/1.3.8": {
+        "type": "package",
+        "dependencies": {
+          "K4os.Compression.LZ4": "1.3.8",
+          "K4os.Hash.xxHash": "1.0.8"
+        },
+        "compile": {
+          "lib/net6.0/K4os.Compression.LZ4.Streams.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/K4os.Compression.LZ4.Streams.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "K4os.Hash.xxHash/1.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/K4os.Hash.xxHash.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/K4os.Hash.xxHash.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MySql.Data/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.3.1",
+          "Google.Protobuf": "3.26.1",
+          "K4os.Compression.LZ4.Streams": "1.3.8",
+          "System.Configuration.ConfigurationManager": "8.0.0",
+          "System.Security.Permissions": "8.0.0",
+          "ZstdSharp.Port": "0.8.0"
+        },
+        "compile": {
+          "lib/net8.0/MySql.Data.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MySql.Data.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/comerr64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/gssapi64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/k5sprt64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/krb5_64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/krbcc64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.CodeDom/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Management/7.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Management.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Management.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Security.Permissions/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Windows.Extensions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Windows.Extensions/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Windows.Extensions.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "ZstdSharp.Port/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/ZstdSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/ZstdSharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BouncyCastle.Cryptography/2.3.1": {
+      "sha512": "buwoISwecYke3CmgG1AQSg+sNZjJeIb93vTAtJiHZX35hP/teYMxsfg0NDXGUKjGx6BKBTNKc77O2M3vKvlXZQ==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.3.1.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Google.Api.Gax/4.8.0": {
+      "sha512": "xlV8Jq/G5CQAA3PwYAuKGjfzGOP7AvjhREnE6vgZlzxREGYchHudZWa2PWSqFJL+MBtz9YgitLpRogANN3CVvg==",
+      "type": "package",
+      "path": "google.api.gax/4.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.api.gax.4.8.0.nupkg.sha512",
+        "google.api.gax.nuspec",
+        "lib/net462/Google.Api.Gax.dll",
+        "lib/net462/Google.Api.Gax.pdb",
+        "lib/net462/Google.Api.Gax.xml",
+        "lib/netstandard2.0/Google.Api.Gax.dll",
+        "lib/netstandard2.0/Google.Api.Gax.pdb",
+        "lib/netstandard2.0/Google.Api.Gax.xml"
+      ]
+    },
+    "Google.Api.Gax.Rest/4.8.0": {
+      "sha512": "zaA5LZ2VvGj/wwIzRB68swr7khi2kWNgqWvsB0fYtScIAl3kGkGtqiBcx63H1YLeKr5xau1866bFjTeReH6FSQ==",
+      "type": "package",
+      "path": "google.api.gax.rest/4.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.api.gax.rest.4.8.0.nupkg.sha512",
+        "google.api.gax.rest.nuspec",
+        "lib/net462/Google.Api.Gax.Rest.dll",
+        "lib/net462/Google.Api.Gax.Rest.pdb",
+        "lib/net462/Google.Api.Gax.Rest.xml",
+        "lib/netstandard2.0/Google.Api.Gax.Rest.dll",
+        "lib/netstandard2.0/Google.Api.Gax.Rest.pdb",
+        "lib/netstandard2.0/Google.Api.Gax.Rest.xml"
+      ]
+    },
+    "Google.Apis/1.67.0": {
+      "sha512": "XM8/fViJaB1pN61OdXy5RMZoQEqd3hKlWvA/K431gFSb5XtQ48BynfgrbBkUtFcPbSRa4BdjBHzSbkBh/skyMg==",
+      "type": "package",
+      "path": "google.apis/1.67.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.1.67.0.nupkg.sha512",
+        "google.apis.nuspec",
+        "lib/net462/Google.Apis.dll",
+        "lib/net462/Google.Apis.pdb",
+        "lib/net462/Google.Apis.xml",
+        "lib/net6.0/Google.Apis.dll",
+        "lib/net6.0/Google.Apis.pdb",
+        "lib/net6.0/Google.Apis.xml",
+        "lib/netstandard2.0/Google.Apis.dll",
+        "lib/netstandard2.0/Google.Apis.pdb",
+        "lib/netstandard2.0/Google.Apis.xml"
+      ]
+    },
+    "Google.Apis.Auth/1.67.0": {
+      "sha512": "Bs9BlbZ12Y4NXzMONjpzQhZr9VbwLUTGMHkcQRF36aYnk2fYrmj5HNVNh7PPHDDq1fcEQpCtPic2nSlpYQLKXw==",
+      "type": "package",
+      "path": "google.apis.auth/1.67.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.auth.1.67.0.nupkg.sha512",
+        "google.apis.auth.nuspec",
+        "lib/net462/Google.Apis.Auth.dll",
+        "lib/net462/Google.Apis.Auth.pdb",
+        "lib/net462/Google.Apis.Auth.xml",
+        "lib/net6.0/Google.Apis.Auth.dll",
+        "lib/net6.0/Google.Apis.Auth.pdb",
+        "lib/net6.0/Google.Apis.Auth.xml",
+        "lib/netstandard2.0/Google.Apis.Auth.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.pdb",
+        "lib/netstandard2.0/Google.Apis.Auth.xml"
+      ]
+    },
+    "Google.Apis.Core/1.67.0": {
+      "sha512": "IPq0I3B01NYZraPoMl8muELFLg4Vr2sbfyZp4PR2Xe3MAhHkZCiKyV28Yh1L14zIKUb0X0snol1sR5/mx4S6Iw==",
+      "type": "package",
+      "path": "google.apis.core/1.67.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.core.1.67.0.nupkg.sha512",
+        "google.apis.core.nuspec",
+        "lib/net462/Google.Apis.Core.dll",
+        "lib/net462/Google.Apis.Core.pdb",
+        "lib/net462/Google.Apis.Core.xml",
+        "lib/net6.0/Google.Apis.Core.dll",
+        "lib/net6.0/Google.Apis.Core.pdb",
+        "lib/net6.0/Google.Apis.Core.xml",
+        "lib/netstandard2.0/Google.Apis.Core.dll",
+        "lib/netstandard2.0/Google.Apis.Core.pdb",
+        "lib/netstandard2.0/Google.Apis.Core.xml"
+      ]
+    },
+    "Google.Apis.Storage.v1/1.67.0.3365": {
+      "sha512": "N9Rp8aRUV8Fsjl6uojZeJnzZ/zwtImB+crkPz/HsUtIKcC8rx/ZhNdizNJ5YcNFKiVlvGC60p0K7M+Ywk2xTPQ==",
+      "type": "package",
+      "path": "google.apis.storage.v1/1.67.0.3365",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.storage.v1.1.67.0.3365.nupkg.sha512",
+        "google.apis.storage.v1.nuspec",
+        "lib/net462/Google.Apis.Storage.v1.dll",
+        "lib/net462/Google.Apis.Storage.v1.pdb",
+        "lib/net462/Google.Apis.Storage.v1.xml",
+        "lib/net6.0/Google.Apis.Storage.v1.dll",
+        "lib/net6.0/Google.Apis.Storage.v1.pdb",
+        "lib/net6.0/Google.Apis.Storage.v1.xml",
+        "lib/netstandard2.0/Google.Apis.Storage.v1.dll",
+        "lib/netstandard2.0/Google.Apis.Storage.v1.pdb",
+        "lib/netstandard2.0/Google.Apis.Storage.v1.xml"
+      ]
+    },
+    "Google.Cloud.Storage.V1/4.10.0": {
+      "sha512": "a4hHQzDkzR/5Fm2gvfKnvuajYwgTJAZ944+8S3gO7S3qxXkXI+rasx8Jz8ldflyq1zHO5MWTyFiHc7+dfmwYhg==",
+      "type": "package",
+      "path": "google.cloud.storage.v1/4.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.cloud.storage.v1.4.10.0.nupkg.sha512",
+        "google.cloud.storage.v1.nuspec",
+        "lib/net462/Google.Cloud.Storage.V1.dll",
+        "lib/net462/Google.Cloud.Storage.V1.pdb",
+        "lib/net462/Google.Cloud.Storage.V1.xml",
+        "lib/netstandard2.0/Google.Cloud.Storage.V1.dll",
+        "lib/netstandard2.0/Google.Cloud.Storage.V1.pdb",
+        "lib/netstandard2.0/Google.Cloud.Storage.V1.xml"
+      ]
+    },
+    "Google.Protobuf/3.26.1": {
+      "sha512": "CHZX8zXqhF/fdUtd+AYzew8T2HFkAoe5c7lbGxZY/qryAlQXckDvM5BfOJjXlMS7kyICqQTMszj4w1bX5uBJ/w==",
+      "type": "package",
+      "path": "google.protobuf/3.26.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.26.1.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "highcharts.js/7.1.2": {
+      "sha512": "ByLXvAC2S4S0eUS6FEeeRxw6cvIwidInqZ9mNje7iFU3jZQMNbbkbEESu7apnRhSBenuIHHs0Hi4j50UnfuXEg==",
+      "type": "package",
+      "path": "highcharts.js/7.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/highcharts/7.1.2/css/annotations/popup.css",
+        "content/Scripts/highcharts/7.1.2/css/annotations/popup.scss",
+        "content/Scripts/highcharts/7.1.2/css/highcharts.css",
+        "content/Scripts/highcharts/7.1.2/css/highcharts.scss",
+        "content/Scripts/highcharts/7.1.2/css/stocktools/gui.css",
+        "content/Scripts/highcharts/7.1.2/css/stocktools/gui.scss",
+        "content/Scripts/highcharts/7.1.2/css/themes/dark-unica.css",
+        "content/Scripts/highcharts/7.1.2/css/themes/dark-unica.scss",
+        "content/Scripts/highcharts/7.1.2/css/themes/grid-light.css",
+        "content/Scripts/highcharts/7.1.2/css/themes/grid-light.scss",
+        "content/Scripts/highcharts/7.1.2/css/themes/sand-signika.css",
+        "content/Scripts/highcharts/7.1.2/css/themes/sand-signika.scss",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/ControlPoint.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/MockPoint.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/annotations.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/controllable/ControllableCircle.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/controllable/ControllableImage.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/controllable/ControllableLabel.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/controllable/ControllablePath.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/controllable/ControllableRect.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/controllable/controllableMixin.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/controllable/markerMixin.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/eventEmitterMixin.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/navigationBindings.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/popup.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/CrookedLine.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/ElliottWave.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/Fibonacci.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/InfinityLine.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/Measure.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/Pitchfork.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/Tunnel.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/annotations/types/VerticalLine.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/error-messages.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/error.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/highcharts-3d.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/highcharts-more.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/highcharts.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/accessibility.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/annotations-advanced.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/annotations.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/arrow-symbols.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/boost-canvas.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/boost.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/broken-axis.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/bullet.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/current-date-indicator.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/cylinder.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/data.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/datagrouping.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/debugger.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/dependency-wheel.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/dotplot.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/drag-panes.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/draggable-points.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/drilldown.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/export-data.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/exporting.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/full-screen.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/funnel.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/funnel3d.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/gantt.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/grid-axis.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/heatmap.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/histogram-bellcurve.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/item-series.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/networkgraph.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/no-data-to-display.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/offline-exporting.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/oldie-polyfills.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/oldie.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/organization.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/overlapping-datalabels.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/parallel-coordinates.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/pareto.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/pathfinder.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/pattern-fill.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/price-indicator.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/pyramid3d.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/sankey.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/series-label.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/solid-gauge.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/sonification.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/static-scale.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/stock-tools.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/stock.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/streamgraph.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/sunburst.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/tilemap.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/timeline.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/treegrid.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/treemap.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/variable-pie.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/variwide.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/vector.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/venn.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/windbarb.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/wordcloud.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/modules/xrange.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/avocado.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/avocado.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/dark-blue.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/dark-green.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/dark-unica.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/gray.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/grid-light.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/grid.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/sand-signika.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/skies.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/sunset.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/masters/themes/sunset.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/ajax.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/centered-series.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/derived-series.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/download-url.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/draw-point.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/geometry-circles.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/geometry.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/indicator-required.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/multipe-lines.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/navigation.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/nodes.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/on-series.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/polygon.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/reduce-array.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/mixins/tree-series.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/AccessibilityComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/KeyboardNavigation.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/KeyboardNavigationHandler.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/a11y-i18n.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/accessibility.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/components/ContainerComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/components/InfoRegionComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/components/LegendComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/components/MenuComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/components/RangeSelectorComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/components/SeriesComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/components/ZoomComponent.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/accessibility/options.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/bellcurve.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost-canvas.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boost-attach.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boost-init.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boost-options.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boost-overrides.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boost-utils.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boost.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boostable-map.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/boostables.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/named-colors.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/wgl-renderer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/wgl-shader.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/boost/wgl-vbuffer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/broken-axis.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/bullet.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/cylinder.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/data.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/debugger.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/dependency-wheel.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/dotplot.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/drag-panes.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/draggable-points.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/drilldown.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/export-data.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/exporting.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/full-screen.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/funnel.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/funnel3d.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/histogram.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/item-series.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/networkgraph/QuadTree.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/networkgraph/draggable-nodes.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/networkgraph/integrations.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/networkgraph/layouts.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/networkgraph/networkgraph.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/no-data-to-display.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/offline-exporting.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/oldie-polyfills.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/oldie.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/organization.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/overlapping-datalabels.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/parallel-coordinates.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/pareto.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/pattern-fill.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/price-indicator.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/pyramid3d.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sankey.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/series-label.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/solid-gauge.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/Earcon.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/Instrument.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/Timeline.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/chartSonify.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/instrumentDefinitions.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/musicalFrequencies.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/pointSonify.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/sonification.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sonification/utilities.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/static-scale.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/stock-tools-bindings.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/stock-tools-gui.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/streamgraph.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/sunburst.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/tilemap.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/timeline.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/treemap.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/variable-pie.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/variwide.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/vector.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/venn.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/windbarb.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/wordcloud.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/modules/xrange.src.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/Axis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/Chart.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/Column.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/Math.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/Pie.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/SVGRenderer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/Scatter.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/Series.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-3d/VMLRenderer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/ArrowSymbols.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/CurrentDateIndicator.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/GanttChart.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/GanttSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/GridAxis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/Pathfinder.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/PathfinderAlgorithms.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/Tree.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-gantt/TreeGrid.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/ColorAxis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/ColorSeriesMixin.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/GeoJSON.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/HeatmapSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/Map.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/MapAxis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/MapBubbleSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/MapLineSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/MapNavigation.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/MapPointSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/MapPointer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-map/MapSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/AreaRangeSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/AreaSplineRangeSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/BoxPlotSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/BubbleLegend.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/BubbleSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/ColumnPyramidSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/ColumnRangeSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/ErrorBarSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/GaugeSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/PackedBubbleSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/Pane.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/Polar.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/PolygonSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/RadialAxis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts-more/WaterfallSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/AreaSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/AreaSplineSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Axis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/BarSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/CandlestickSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Chart.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Color.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/ColumnSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/DataGrouping.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/DataLabels.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/DateTimeAxis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Dynamics.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/FlagsSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Globals.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Html.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Interaction.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Legend.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/LogarithmicAxis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/MSPointer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Navigator.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/OHLCSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Options.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/OrdinalAxis.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/PieSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/PlotBandSeries.experimental.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/PlotLineOrBand.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Point.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Pointer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/RangeSelector.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Responsive.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/ScatterSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/ScrollablePlotArea.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Scrollbar.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Series.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/SplineSeries.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Stacking.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/StockChart.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/SvgRenderer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Tick.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Time.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Tooltip.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/TouchPointer.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/parts/Utilities.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/avocado.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/dark-blue.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/dark-green.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/dark-unica.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/gray.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/grid-light.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/grid.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/sand-signika.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/skies.js",
+        "content/Scripts/highcharts/7.1.2/es-modules/themes/sunset.js",
+        "content/Scripts/highcharts/7.1.2/highcharts-3d.js",
+        "content/Scripts/highcharts/7.1.2/highcharts-3d.js.map",
+        "content/Scripts/highcharts/7.1.2/highcharts-3d.src.js",
+        "content/Scripts/highcharts/7.1.2/highcharts-more.js",
+        "content/Scripts/highcharts/7.1.2/highcharts-more.js.map",
+        "content/Scripts/highcharts/7.1.2/highcharts-more.src.js",
+        "content/Scripts/highcharts/7.1.2/highcharts.js",
+        "content/Scripts/highcharts/7.1.2/highcharts.js.map",
+        "content/Scripts/highcharts/7.1.2/highcharts.src.js",
+        "content/Scripts/highcharts/7.1.2/lib/canvg.js",
+        "content/Scripts/highcharts/7.1.2/lib/canvg.src.js",
+        "content/Scripts/highcharts/7.1.2/lib/jspdf.js",
+        "content/Scripts/highcharts/7.1.2/lib/jspdf.src.js",
+        "content/Scripts/highcharts/7.1.2/lib/rgbcolor.js",
+        "content/Scripts/highcharts/7.1.2/lib/rgbcolor.src.js",
+        "content/Scripts/highcharts/7.1.2/lib/svg2pdf.js",
+        "content/Scripts/highcharts/7.1.2/lib/svg2pdf.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/accessibility.js",
+        "content/Scripts/highcharts/7.1.2/modules/accessibility.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/accessibility.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/annotations-advanced.js",
+        "content/Scripts/highcharts/7.1.2/modules/annotations-advanced.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/annotations-advanced.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/annotations.js",
+        "content/Scripts/highcharts/7.1.2/modules/annotations.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/annotations.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/arrow-symbols.js",
+        "content/Scripts/highcharts/7.1.2/modules/arrow-symbols.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/arrow-symbols.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/boost-canvas.js",
+        "content/Scripts/highcharts/7.1.2/modules/boost-canvas.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/boost-canvas.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/boost.js",
+        "content/Scripts/highcharts/7.1.2/modules/boost.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/boost.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/broken-axis.js",
+        "content/Scripts/highcharts/7.1.2/modules/broken-axis.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/broken-axis.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/bullet.js",
+        "content/Scripts/highcharts/7.1.2/modules/bullet.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/bullet.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/current-date-indicator.js",
+        "content/Scripts/highcharts/7.1.2/modules/current-date-indicator.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/current-date-indicator.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/cylinder.js",
+        "content/Scripts/highcharts/7.1.2/modules/cylinder.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/cylinder.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/data.js",
+        "content/Scripts/highcharts/7.1.2/modules/data.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/data.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/datagrouping.js",
+        "content/Scripts/highcharts/7.1.2/modules/datagrouping.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/datagrouping.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/debugger.js",
+        "content/Scripts/highcharts/7.1.2/modules/debugger.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/debugger.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/dependency-wheel.js",
+        "content/Scripts/highcharts/7.1.2/modules/dependency-wheel.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/dependency-wheel.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/dotplot.js",
+        "content/Scripts/highcharts/7.1.2/modules/dotplot.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/dotplot.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/drag-panes.js",
+        "content/Scripts/highcharts/7.1.2/modules/drag-panes.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/drag-panes.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/draggable-points.js",
+        "content/Scripts/highcharts/7.1.2/modules/draggable-points.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/draggable-points.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/drilldown.js",
+        "content/Scripts/highcharts/7.1.2/modules/drilldown.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/drilldown.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/export-data.js",
+        "content/Scripts/highcharts/7.1.2/modules/export-data.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/export-data.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/exporting.js",
+        "content/Scripts/highcharts/7.1.2/modules/exporting.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/exporting.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/full-screen.js",
+        "content/Scripts/highcharts/7.1.2/modules/full-screen.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/full-screen.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/funnel.js",
+        "content/Scripts/highcharts/7.1.2/modules/funnel.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/funnel.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/funnel3d.js",
+        "content/Scripts/highcharts/7.1.2/modules/funnel3d.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/funnel3d.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/gantt.js",
+        "content/Scripts/highcharts/7.1.2/modules/gantt.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/gantt.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/grid-axis.js",
+        "content/Scripts/highcharts/7.1.2/modules/grid-axis.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/grid-axis.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/heatmap.js",
+        "content/Scripts/highcharts/7.1.2/modules/heatmap.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/heatmap.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/histogram-bellcurve.js",
+        "content/Scripts/highcharts/7.1.2/modules/histogram-bellcurve.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/histogram-bellcurve.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/item-series.js",
+        "content/Scripts/highcharts/7.1.2/modules/item-series.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/item-series.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/networkgraph.js",
+        "content/Scripts/highcharts/7.1.2/modules/networkgraph.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/networkgraph.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/no-data-to-display.js",
+        "content/Scripts/highcharts/7.1.2/modules/no-data-to-display.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/no-data-to-display.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/offline-exporting.js",
+        "content/Scripts/highcharts/7.1.2/modules/offline-exporting.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/offline-exporting.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/oldie-polyfills.js",
+        "content/Scripts/highcharts/7.1.2/modules/oldie-polyfills.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/oldie-polyfills.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/oldie.js",
+        "content/Scripts/highcharts/7.1.2/modules/oldie.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/oldie.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/organization.js",
+        "content/Scripts/highcharts/7.1.2/modules/organization.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/organization.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/overlapping-datalabels.js",
+        "content/Scripts/highcharts/7.1.2/modules/overlapping-datalabels.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/overlapping-datalabels.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/parallel-coordinates.js",
+        "content/Scripts/highcharts/7.1.2/modules/parallel-coordinates.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/parallel-coordinates.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/pareto.js",
+        "content/Scripts/highcharts/7.1.2/modules/pareto.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/pareto.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/pathfinder.js",
+        "content/Scripts/highcharts/7.1.2/modules/pathfinder.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/pathfinder.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/pattern-fill.js",
+        "content/Scripts/highcharts/7.1.2/modules/pattern-fill.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/pattern-fill.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/price-indicator.js",
+        "content/Scripts/highcharts/7.1.2/modules/price-indicator.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/price-indicator.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/pyramid3d.js",
+        "content/Scripts/highcharts/7.1.2/modules/pyramid3d.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/pyramid3d.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/sankey.js",
+        "content/Scripts/highcharts/7.1.2/modules/sankey.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/sankey.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/series-label.js",
+        "content/Scripts/highcharts/7.1.2/modules/series-label.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/series-label.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/solid-gauge.js",
+        "content/Scripts/highcharts/7.1.2/modules/solid-gauge.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/solid-gauge.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/sonification.js",
+        "content/Scripts/highcharts/7.1.2/modules/sonification.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/sonification.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/static-scale.js",
+        "content/Scripts/highcharts/7.1.2/modules/static-scale.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/static-scale.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/stock-tools.js",
+        "content/Scripts/highcharts/7.1.2/modules/stock-tools.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/stock-tools.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/stock.js",
+        "content/Scripts/highcharts/7.1.2/modules/stock.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/stock.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/streamgraph.js",
+        "content/Scripts/highcharts/7.1.2/modules/streamgraph.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/streamgraph.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/sunburst.js",
+        "content/Scripts/highcharts/7.1.2/modules/sunburst.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/sunburst.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/tilemap.js",
+        "content/Scripts/highcharts/7.1.2/modules/tilemap.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/tilemap.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/timeline.js",
+        "content/Scripts/highcharts/7.1.2/modules/timeline.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/timeline.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/treegrid.js",
+        "content/Scripts/highcharts/7.1.2/modules/treegrid.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/treegrid.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/treemap.js",
+        "content/Scripts/highcharts/7.1.2/modules/treemap.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/treemap.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/variable-pie.js",
+        "content/Scripts/highcharts/7.1.2/modules/variable-pie.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/variable-pie.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/variwide.js",
+        "content/Scripts/highcharts/7.1.2/modules/variwide.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/variwide.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/vector.js",
+        "content/Scripts/highcharts/7.1.2/modules/vector.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/vector.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/venn.js",
+        "content/Scripts/highcharts/7.1.2/modules/venn.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/venn.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/windbarb.js",
+        "content/Scripts/highcharts/7.1.2/modules/windbarb.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/windbarb.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/wordcloud.js",
+        "content/Scripts/highcharts/7.1.2/modules/wordcloud.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/wordcloud.src.js",
+        "content/Scripts/highcharts/7.1.2/modules/xrange.js",
+        "content/Scripts/highcharts/7.1.2/modules/xrange.js.map",
+        "content/Scripts/highcharts/7.1.2/modules/xrange.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/avocado.js",
+        "content/Scripts/highcharts/7.1.2/themes/avocado.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/avocado.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/dark-blue.js",
+        "content/Scripts/highcharts/7.1.2/themes/dark-blue.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/dark-blue.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/dark-green.js",
+        "content/Scripts/highcharts/7.1.2/themes/dark-green.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/dark-green.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/dark-unica.js",
+        "content/Scripts/highcharts/7.1.2/themes/dark-unica.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/dark-unica.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/gray.js",
+        "content/Scripts/highcharts/7.1.2/themes/gray.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/gray.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/grid-light.js",
+        "content/Scripts/highcharts/7.1.2/themes/grid-light.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/grid-light.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/grid.js",
+        "content/Scripts/highcharts/7.1.2/themes/grid.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/grid.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/sand-signika.js",
+        "content/Scripts/highcharts/7.1.2/themes/sand-signika.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/sand-signika.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/skies.js",
+        "content/Scripts/highcharts/7.1.2/themes/skies.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/skies.src.js",
+        "content/Scripts/highcharts/7.1.2/themes/sunset.js",
+        "content/Scripts/highcharts/7.1.2/themes/sunset.js.map",
+        "content/Scripts/highcharts/7.1.2/themes/sunset.src.js",
+        "highcharts.js.7.1.2.nupkg.sha512",
+        "highcharts.js.nuspec"
+      ]
+    },
+    "K4os.Compression.LZ4/1.3.8": {
+      "sha512": "LhwlPa7c1zs1OV2XadMtAWdImjLIsqFJPoRcIWAadSRn0Ri1DepK65UbWLPmt4riLqx2d40xjXRk0ogpqNtK7g==",
+      "type": "package",
+      "path": "k4os.compression.lz4/1.3.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "k4os.compression.lz4.1.3.8.nupkg.sha512",
+        "k4os.compression.lz4.nuspec",
+        "lib/net462/K4os.Compression.LZ4.dll",
+        "lib/net462/K4os.Compression.LZ4.xml",
+        "lib/net5.0/K4os.Compression.LZ4.dll",
+        "lib/net5.0/K4os.Compression.LZ4.xml",
+        "lib/net6.0/K4os.Compression.LZ4.dll",
+        "lib/net6.0/K4os.Compression.LZ4.xml",
+        "lib/netstandard2.0/K4os.Compression.LZ4.dll",
+        "lib/netstandard2.0/K4os.Compression.LZ4.xml",
+        "lib/netstandard2.1/K4os.Compression.LZ4.dll",
+        "lib/netstandard2.1/K4os.Compression.LZ4.xml"
+      ]
+    },
+    "K4os.Compression.LZ4.Streams/1.3.8": {
+      "sha512": "P15qr8dZAeo9GvYbUIPEYFQ0MEJ0i5iqr37wsYeRC3la2uCldOoeCa6to0CZ1taiwxIV+Mk8NGuZi+4iWivK9w==",
+      "type": "package",
+      "path": "k4os.compression.lz4.streams/1.3.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
+        "k4os.compression.lz4.streams.nuspec",
+        "lib/net462/K4os.Compression.LZ4.Streams.dll",
+        "lib/net462/K4os.Compression.LZ4.Streams.xml",
+        "lib/net5.0/K4os.Compression.LZ4.Streams.dll",
+        "lib/net5.0/K4os.Compression.LZ4.Streams.xml",
+        "lib/net6.0/K4os.Compression.LZ4.Streams.dll",
+        "lib/net6.0/K4os.Compression.LZ4.Streams.xml",
+        "lib/netstandard2.0/K4os.Compression.LZ4.Streams.dll",
+        "lib/netstandard2.0/K4os.Compression.LZ4.Streams.xml",
+        "lib/netstandard2.1/K4os.Compression.LZ4.Streams.dll",
+        "lib/netstandard2.1/K4os.Compression.LZ4.Streams.xml"
+      ]
+    },
+    "K4os.Hash.xxHash/1.0.8": {
+      "sha512": "Wp2F7BamQ2Q/7Hk834nV9vRQapgcr8kgv9Jvfm8J3D0IhDqZMMl+a2yxUq5ltJitvXvQfB8W6K4F4fCbw/P6YQ==",
+      "type": "package",
+      "path": "k4os.hash.xxhash/1.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "k4os.hash.xxhash.1.0.8.nupkg.sha512",
+        "k4os.hash.xxhash.nuspec",
+        "lib/net462/K4os.Hash.xxHash.dll",
+        "lib/net462/K4os.Hash.xxHash.xml",
+        "lib/net5.0/K4os.Hash.xxHash.dll",
+        "lib/net5.0/K4os.Hash.xxHash.xml",
+        "lib/net6.0/K4os.Hash.xxHash.dll",
+        "lib/net6.0/K4os.Hash.xxHash.xml",
+        "lib/netstandard2.0/K4os.Hash.xxHash.dll",
+        "lib/netstandard2.0/K4os.Hash.xxHash.xml",
+        "lib/netstandard2.1/K4os.Hash.xxHash.dll",
+        "lib/netstandard2.1/K4os.Hash.xxHash.xml"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "sha512": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "MySql.Data/9.0.0": {
+      "sha512": "YT2/fdDy3FBx5ZK0qsupEs9Gt0iFo/mZR+ND5cJwrr+6xguAOXyYpYUbEj27UcLZER5InOUrJQYyUaPIDil2Xw==",
+      "type": "package",
+      "path": "mysql.data/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net462/MySql.Data.dll",
+        "lib/net462/MySql.Data.xml",
+        "lib/net48/MySql.Data.dll",
+        "lib/net48/MySql.Data.xml",
+        "lib/net6.0/MySql.Data.dll",
+        "lib/net6.0/MySql.Data.xml",
+        "lib/net8.0/MySql.Data.dll",
+        "lib/net8.0/MySql.Data.xml",
+        "lib/netstandard2.0/MySql.Data.dll",
+        "lib/netstandard2.0/MySql.Data.xml",
+        "lib/netstandard2.1/MySql.Data.dll",
+        "lib/netstandard2.1/MySql.Data.xml",
+        "logo-mysql-170x115.png",
+        "mysql.data.9.0.0.nupkg.sha512",
+        "mysql.data.nuspec",
+        "runtimes/win-x64/native/comerr64.dll",
+        "runtimes/win-x64/native/gssapi64.dll",
+        "runtimes/win-x64/native/k5sprt64.dll",
+        "runtimes/win-x64/native/krb5_64.dll",
+        "runtimes/win-x64/native/krbcc64.dll"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "System.CodeDom/7.0.0": {
+      "sha512": "GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
+      "type": "package",
+      "path": "system.codedom/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.CodeDom.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
+        "lib/net462/System.CodeDom.dll",
+        "lib/net462/System.CodeDom.xml",
+        "lib/net6.0/System.CodeDom.dll",
+        "lib/net6.0/System.CodeDom.xml",
+        "lib/net7.0/System.CodeDom.dll",
+        "lib/net7.0/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.7.0.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/8.0.0": {
+      "sha512": "JlYi9XVvIREURRUlGMr1F6vOFLk7YSY4p1vHo4kX3tQ0AGrjqlRWHDi66ImHhy6qwXBG3BJ6Y1QlYQ+Qz6Xgww==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Configuration.ConfigurationManager.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Configuration.ConfigurationManager.targets",
+        "lib/net462/System.Configuration.ConfigurationManager.dll",
+        "lib/net462/System.Configuration.ConfigurationManager.xml",
+        "lib/net6.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net6.0/System.Configuration.ConfigurationManager.xml",
+        "lib/net7.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net7.0/System.Configuration.ConfigurationManager.xml",
+        "lib/net8.0/System.Configuration.ConfigurationManager.dll",
+        "lib/net8.0/System.Configuration.ConfigurationManager.xml",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Management/7.0.2": {
+      "sha512": "/qEUN91mP/MUQmJnM5y5BdT7ZoPuVrtxnFlbJ8a3kBJGhe2wCzBfnPFtK2wTtEEcf3DMGR9J00GZZfg6HRI6yA==",
+      "type": "package",
+      "path": "system.management/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Management.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.Management.dll",
+        "lib/net6.0/System.Management.xml",
+        "lib/net7.0/System.Management.dll",
+        "lib/net7.0/System.Management.xml",
+        "lib/netstandard2.0/System.Management.dll",
+        "lib/netstandard2.0/System.Management.xml",
+        "runtimes/win/lib/net6.0/System.Management.dll",
+        "runtimes/win/lib/net6.0/System.Management.xml",
+        "runtimes/win/lib/net7.0/System.Management.dll",
+        "runtimes/win/lib/net7.0/System.Management.xml",
+        "system.management.7.0.2.nupkg.sha512",
+        "system.management.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Cryptography.ProtectedData/8.0.0": {
+      "sha512": "+TUFINV2q2ifyXauQXRwy4CiBhqvDEDZeVJU7qfxya4aRYOKzVBpN+4acx25VcPB9ywUN6C0n8drWl110PhZEg==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.ProtectedData.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.ProtectedData.targets",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net462/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net462/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net6.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net6.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net7.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net7.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net8.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Permissions/8.0.0": {
+      "sha512": "v/BBylw7XevuAsHXoX9dDUUfmBIcUf7Lkz8K3ZXIKz3YRKpw8YftpSir4n4e/jDTKFoaK37AsC3xnk+GNFI1Ow==",
+      "type": "package",
+      "path": "system.security.permissions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Permissions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Permissions.targets",
+        "lib/net462/System.Security.Permissions.dll",
+        "lib/net462/System.Security.Permissions.xml",
+        "lib/net6.0/System.Security.Permissions.dll",
+        "lib/net6.0/System.Security.Permissions.xml",
+        "lib/net7.0/System.Security.Permissions.dll",
+        "lib/net7.0/System.Security.Permissions.xml",
+        "lib/net8.0/System.Security.Permissions.dll",
+        "lib/net8.0/System.Security.Permissions.xml",
+        "lib/netstandard2.0/System.Security.Permissions.dll",
+        "lib/netstandard2.0/System.Security.Permissions.xml",
+        "system.security.permissions.8.0.0.nupkg.sha512",
+        "system.security.permissions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Windows.Extensions/8.0.0": {
+      "sha512": "Obg3a90MkOw9mYKxrardLpY2u0axDMrSmy4JCdq2cYbelM2cUwmUir5Bomvd1yxmPL9h5LVHU1tuKBZpUjfASg==",
+      "type": "package",
+      "path": "system.windows.extensions/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/System.Windows.Extensions.dll",
+        "lib/net6.0/System.Windows.Extensions.xml",
+        "lib/net7.0/System.Windows.Extensions.dll",
+        "lib/net7.0/System.Windows.Extensions.xml",
+        "lib/net8.0/System.Windows.Extensions.dll",
+        "lib/net8.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net6.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net6.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net7.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net7.0/System.Windows.Extensions.xml",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.dll",
+        "runtimes/win/lib/net8.0/System.Windows.Extensions.xml",
+        "system.windows.extensions.8.0.0.nupkg.sha512",
+        "system.windows.extensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "ZstdSharp.Port/0.8.0": {
+      "sha512": "Z62eNBIu8E8YtbqlMy57tK3dV1+m2b9NhPeaYovB5exmLKvrGCqOhJTzrEUH5VyUWU6vwX3c1XHJGhW5HVs8dA==",
+      "type": "package",
+      "path": "zstdsharp.port/0.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/ZstdSharp.dll",
+        "lib/net5.0/ZstdSharp.dll",
+        "lib/net6.0/ZstdSharp.dll",
+        "lib/net7.0/ZstdSharp.dll",
+        "lib/net8.0/ZstdSharp.dll",
+        "lib/netcoreapp3.1/ZstdSharp.dll",
+        "lib/netstandard2.0/ZstdSharp.dll",
+        "lib/netstandard2.1/ZstdSharp.dll",
+        "zstdsharp.port.0.8.0.nupkg.sha512",
+        "zstdsharp.port.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net10.0": [
+      "Google.Cloud.Storage.V1 >= 4.10.0",
+      "MySql.Data >= 9.0.0",
+      "highcharts.js >= 7.1.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Mach\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Mach\\Downloads\\DHANCVGHMI\\CVGHMI\\CVGHMI\\CVGHMI\\CVGHMI.csproj",
+      "projectName": "CVGHMI",
+      "projectPath": "C:\\Users\\Mach\\Downloads\\DHANCVGHMI\\CVGHMI\\CVGHMI\\CVGHMI\\CVGHMI.csproj",
+      "packagesPath": "C:\\Users\\Mach\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mach\\Downloads\\DHANCVGHMI\\CVGHMI\\CVGHMI\\CVGHMI\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Mach\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net10.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net10.0": {
+          "targetAlias": "net10.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net10.0": {
+        "targetAlias": "net10.0",
+        "dependencies": {
+          "Google.Cloud.Storage.V1": {
+            "target": "Package",
+            "version": "[4.10.0, )"
+          },
+          "MySql.Data": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
+          "highcharts.js": {
+            "target": "Package",
+            "version": "[7.1.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+        "packagesToPrune": {
+          "Microsoft.AspNetCore": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
+          "Microsoft.AspNetCore.App": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authentication": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authentication.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authentication.BearerToken": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authentication.Cookies": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authentication.Core": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authentication.OAuth": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authorization": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Authorization.Policy": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Components": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Components.Authorization": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Components.Endpoints": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Components.Forms": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Components.Server": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Components.Web": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Connections.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.CookiePolicy": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Cors": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Cryptography.Internal": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "(,10.0.32767]",
+          "Microsoft.AspNetCore.DataProtection": "(,10.0.32767]",
+          "Microsoft.AspNetCore.DataProtection.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.DataProtection.Extensions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Diagnostics": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Diagnostics.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Diagnostics.HealthChecks": "(,10.0.32767]",
+          "Microsoft.AspNetCore.HostFiltering": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Hosting": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Hosting.Server.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Html.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Http": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Http.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Http.Connections": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Http.Connections.Common": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Http.Extensions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Http.Features": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Http.Results": "(,10.0.32767]",
+          "Microsoft.AspNetCore.HttpLogging": "(,10.0.32767]",
+          "Microsoft.AspNetCore.HttpOverrides": "(,10.0.32767]",
+          "Microsoft.AspNetCore.HttpsPolicy": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Identity": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Localization": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Localization.Routing": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Metadata": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.Core": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.Cors": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.Formatters.Xml": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.Localization": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.Razor": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.RazorPages": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.TagHelpers": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "(,10.0.32767]",
+          "Microsoft.AspNetCore.OutputCaching": "(,10.0.32767]",
+          "Microsoft.AspNetCore.RateLimiting": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Razor": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Razor.Runtime": "(,10.0.32767]",
+          "Microsoft.AspNetCore.RequestDecompression": "(,10.0.32767]",
+          "Microsoft.AspNetCore.ResponseCaching": "(,10.0.32767]",
+          "Microsoft.AspNetCore.ResponseCaching.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.ResponseCompression": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Rewrite": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Routing": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Routing.Abstractions": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.HttpSys": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.IIS": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.IISIntegration": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.Kestrel": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.Kestrel.Core": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.Kestrel.Transport.Quic": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets": "(,10.0.32767]",
+          "Microsoft.AspNetCore.Session": "(,10.0.32767]",
+          "Microsoft.AspNetCore.SignalR": "(,10.0.32767]",
+          "Microsoft.AspNetCore.SignalR.Common": "(,10.0.32767]",
+          "Microsoft.AspNetCore.SignalR.Core": "(,10.0.32767]",
+          "Microsoft.AspNetCore.SignalR.Protocols.Json": "(,10.0.32767]",
+          "Microsoft.AspNetCore.StaticAssets": "(,10.0.32767]",
+          "Microsoft.AspNetCore.StaticFiles": "(,10.0.32767]",
+          "Microsoft.AspNetCore.WebSockets": "(,10.0.32767]",
+          "Microsoft.AspNetCore.WebUtilities": "(,10.0.32767]",
+          "Microsoft.CSharp": "(,4.7.32767]",
+          "Microsoft.Extensions.Caching.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Caching.Memory": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.Binder": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.CommandLine": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.FileExtensions": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.Ini": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.Json": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.KeyPerFile": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.UserSecrets": "(,10.0.32767]",
+          "Microsoft.Extensions.Configuration.Xml": "(,10.0.32767]",
+          "Microsoft.Extensions.DependencyInjection": "(,10.0.32767]",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Diagnostics": "(,10.0.32767]",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "(,10.0.32767]",
+          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Features": "(,10.0.32767]",
+          "Microsoft.Extensions.FileProviders.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.FileProviders.Composite": "(,10.0.32767]",
+          "Microsoft.Extensions.FileProviders.Physical": "(,10.0.32767]",
+          "Microsoft.Extensions.FileSystemGlobbing": "(,10.0.32767]",
+          "Microsoft.Extensions.Hosting": "(,10.0.32767]",
+          "Microsoft.Extensions.Hosting.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Http": "(,10.0.32767]",
+          "Microsoft.Extensions.Identity.Core": "(,10.0.32767]",
+          "Microsoft.Extensions.Identity.Stores": "(,10.0.32767]",
+          "Microsoft.Extensions.Localization": "(,10.0.32767]",
+          "Microsoft.Extensions.Localization.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging.Abstractions": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging.Configuration": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging.Console": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging.Debug": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging.EventLog": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging.EventSource": "(,10.0.32767]",
+          "Microsoft.Extensions.Logging.TraceSource": "(,10.0.32767]",
+          "Microsoft.Extensions.ObjectPool": "(,10.0.32767]",
+          "Microsoft.Extensions.Options": "(,10.0.32767]",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "(,10.0.32767]",
+          "Microsoft.Extensions.Options.DataAnnotations": "(,10.0.32767]",
+          "Microsoft.Extensions.Primitives": "(,10.0.32767]",
+          "Microsoft.Extensions.Validation": "(,10.0.32767]",
+          "Microsoft.Extensions.WebEncoders": "(,10.0.32767]",
+          "Microsoft.JSInterop": "(,10.0.32767]",
+          "Microsoft.Net.Http.Headers": "(,10.0.32767]",
+          "Microsoft.VisualBasic": "(,10.4.32767]",
+          "Microsoft.Win32.Primitives": "(,4.3.32767]",
+          "Microsoft.Win32.Registry": "(,5.0.32767]",
+          "runtime.any.System.Collections": "(,4.3.32767]",
+          "runtime.any.System.Diagnostics.Tools": "(,4.3.32767]",
+          "runtime.any.System.Diagnostics.Tracing": "(,4.3.32767]",
+          "runtime.any.System.Globalization": "(,4.3.32767]",
+          "runtime.any.System.Globalization.Calendars": "(,4.3.32767]",
+          "runtime.any.System.IO": "(,4.3.32767]",
+          "runtime.any.System.Reflection": "(,4.3.32767]",
+          "runtime.any.System.Reflection.Extensions": "(,4.3.32767]",
+          "runtime.any.System.Reflection.Primitives": "(,4.3.32767]",
+          "runtime.any.System.Resources.ResourceManager": "(,4.3.32767]",
+          "runtime.any.System.Runtime": "(,4.3.32767]",
+          "runtime.any.System.Runtime.Handles": "(,4.3.32767]",
+          "runtime.any.System.Runtime.InteropServices": "(,4.3.32767]",
+          "runtime.any.System.Text.Encoding": "(,4.3.32767]",
+          "runtime.any.System.Text.Encoding.Extensions": "(,4.3.32767]",
+          "runtime.any.System.Threading.Tasks": "(,4.3.32767]",
+          "runtime.any.System.Threading.Timer": "(,4.3.32767]",
+          "runtime.aot.System.Collections": "(,4.3.32767]",
+          "runtime.aot.System.Diagnostics.Tools": "(,4.3.32767]",
+          "runtime.aot.System.Diagnostics.Tracing": "(,4.3.32767]",
+          "runtime.aot.System.Globalization": "(,4.3.32767]",
+          "runtime.aot.System.Globalization.Calendars": "(,4.3.32767]",
+          "runtime.aot.System.IO": "(,4.3.32767]",
+          "runtime.aot.System.Reflection": "(,4.3.32767]",
+          "runtime.aot.System.Reflection.Extensions": "(,4.3.32767]",
+          "runtime.aot.System.Reflection.Primitives": "(,4.3.32767]",
+          "runtime.aot.System.Resources.ResourceManager": "(,4.3.32767]",
+          "runtime.aot.System.Runtime": "(,4.3.32767]",
+          "runtime.aot.System.Runtime.Handles": "(,4.3.32767]",
+          "runtime.aot.System.Runtime.InteropServices": "(,4.3.32767]",
+          "runtime.aot.System.Text.Encoding": "(,4.3.32767]",
+          "runtime.aot.System.Text.Encoding.Extensions": "(,4.3.32767]",
+          "runtime.aot.System.Threading.Tasks": "(,4.3.32767]",
+          "runtime.aot.System.Threading.Timer": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.unix.Microsoft.Win32.Primitives": "(,4.3.32767]",
+          "runtime.unix.System.Console": "(,4.3.32767]",
+          "runtime.unix.System.Diagnostics.Debug": "(,4.3.32767]",
+          "runtime.unix.System.IO.FileSystem": "(,4.3.32767]",
+          "runtime.unix.System.Net.Primitives": "(,4.3.32767]",
+          "runtime.unix.System.Net.Sockets": "(,4.3.32767]",
+          "runtime.unix.System.Private.Uri": "(,4.3.32767]",
+          "runtime.unix.System.Runtime.Extensions": "(,4.3.32767]",
+          "runtime.win.Microsoft.Win32.Primitives": "(,4.3.32767]",
+          "runtime.win.System.Console": "(,4.3.32767]",
+          "runtime.win.System.Diagnostics.Debug": "(,4.3.32767]",
+          "runtime.win.System.IO.FileSystem": "(,4.3.32767]",
+          "runtime.win.System.Net.Primitives": "(,4.3.32767]",
+          "runtime.win.System.Net.Sockets": "(,4.3.32767]",
+          "runtime.win.System.Runtime.Extensions": "(,4.3.32767]",
+          "runtime.win10-arm-aot.runtime.native.System.IO.Compression": "(,4.0.32767]",
+          "runtime.win10-arm64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.win10-x64-aot.runtime.native.System.IO.Compression": "(,4.0.32767]",
+          "runtime.win10-x86-aot.runtime.native.System.IO.Compression": "(,4.0.32767]",
+          "runtime.win7-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.win7-x86.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.win7.System.Private.Uri": "(,4.3.32767]",
+          "runtime.win8-arm.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "System.AppContext": "(,4.3.32767]",
+          "System.Buffers": "(,5.0.32767]",
+          "System.Collections": "(,4.3.32767]",
+          "System.Collections.Concurrent": "(,4.3.32767]",
+          "System.Collections.Immutable": "(,10.0.32767]",
+          "System.Collections.NonGeneric": "(,4.3.32767]",
+          "System.Collections.Specialized": "(,4.3.32767]",
+          "System.ComponentModel": "(,4.3.32767]",
+          "System.ComponentModel.Annotations": "(,4.3.32767]",
+          "System.ComponentModel.EventBasedAsync": "(,4.3.32767]",
+          "System.ComponentModel.Primitives": "(,4.3.32767]",
+          "System.ComponentModel.TypeConverter": "(,4.3.32767]",
+          "System.Console": "(,4.3.32767]",
+          "System.Data.Common": "(,4.3.32767]",
+          "System.Data.DataSetExtensions": "(,4.4.32767]",
+          "System.Diagnostics.Contracts": "(,4.3.32767]",
+          "System.Diagnostics.Debug": "(,4.3.32767]",
+          "System.Diagnostics.DiagnosticSource": "(,10.0.32767]",
+          "System.Diagnostics.EventLog": "(,10.0.32767]",
+          "System.Diagnostics.FileVersionInfo": "(,4.3.32767]",
+          "System.Diagnostics.Process": "(,4.3.32767]",
+          "System.Diagnostics.StackTrace": "(,4.3.32767]",
+          "System.Diagnostics.TextWriterTraceListener": "(,4.3.32767]",
+          "System.Diagnostics.Tools": "(,4.3.32767]",
+          "System.Diagnostics.TraceSource": "(,4.3.32767]",
+          "System.Diagnostics.Tracing": "(,4.3.32767]",
+          "System.Drawing.Primitives": "(,4.3.32767]",
+          "System.Dynamic.Runtime": "(,4.3.32767]",
+          "System.Formats.Asn1": "(,10.0.32767]",
+          "System.Formats.Cbor": "(,10.0.32767]",
+          "System.Formats.Tar": "(,10.0.32767]",
+          "System.Globalization": "(,4.3.32767]",
+          "System.Globalization.Calendars": "(,4.3.32767]",
+          "System.Globalization.Extensions": "(,4.3.32767]",
+          "System.IO": "(,4.3.32767]",
+          "System.IO.Compression": "(,4.3.32767]",
+          "System.IO.Compression.ZipFile": "(,4.3.32767]",
+          "System.IO.FileSystem": "(,4.3.32767]",
+          "System.IO.FileSystem.AccessControl": "(,4.4.32767]",
+          "System.IO.FileSystem.DriveInfo": "(,4.3.32767]",
+          "System.IO.FileSystem.Primitives": "(,4.3.32767]",
+          "System.IO.FileSystem.Watcher": "(,4.3.32767]",
+          "System.IO.IsolatedStorage": "(,4.3.32767]",
+          "System.IO.MemoryMappedFiles": "(,4.3.32767]",
+          "System.IO.Pipelines": "(,10.0.32767]",
+          "System.IO.Pipes": "(,4.3.32767]",
+          "System.IO.Pipes.AccessControl": "(,5.0.32767]",
+          "System.IO.UnmanagedMemoryStream": "(,4.3.32767]",
+          "System.Linq": "(,4.3.32767]",
+          "System.Linq.AsyncEnumerable": "(,10.0.32767]",
+          "System.Linq.Expressions": "(,4.3.32767]",
+          "System.Linq.Parallel": "(,4.3.32767]",
+          "System.Linq.Queryable": "(,4.3.32767]",
+          "System.Memory": "(,5.0.32767]",
+          "System.Net.Http": "(,4.3.32767]",
+          "System.Net.Http.Json": "(,10.0.32767]",
+          "System.Net.NameResolution": "(,4.3.32767]",
+          "System.Net.NetworkInformation": "(,4.3.32767]",
+          "System.Net.Ping": "(,4.3.32767]",
+          "System.Net.Primitives": "(,4.3.32767]",
+          "System.Net.Requests": "(,4.3.32767]",
+          "System.Net.Security": "(,4.3.32767]",
+          "System.Net.ServerSentEvents": "(,10.0.32767]",
+          "System.Net.Sockets": "(,4.3.32767]",
+          "System.Net.WebHeaderCollection": "(,4.3.32767]",
+          "System.Net.WebSockets": "(,4.3.32767]",
+          "System.Net.WebSockets.Client": "(,4.3.32767]",
+          "System.Numerics.Vectors": "(,5.0.32767]",
+          "System.ObjectModel": "(,4.3.32767]",
+          "System.Private.DataContractSerialization": "(,4.3.32767]",
+          "System.Private.Uri": "(,4.3.32767]",
+          "System.Reflection": "(,4.3.32767]",
+          "System.Reflection.DispatchProxy": "(,6.0.32767]",
+          "System.Reflection.Emit": "(,4.7.32767]",
+          "System.Reflection.Emit.ILGeneration": "(,4.7.32767]",
+          "System.Reflection.Emit.Lightweight": "(,4.7.32767]",
+          "System.Reflection.Extensions": "(,4.3.32767]",
+          "System.Reflection.Metadata": "(,10.0.32767]",
+          "System.Reflection.Primitives": "(,4.3.32767]",
+          "System.Reflection.TypeExtensions": "(,4.3.32767]",
+          "System.Resources.Reader": "(,4.3.32767]",
+          "System.Resources.ResourceManager": "(,4.3.32767]",
+          "System.Resources.Writer": "(,4.3.32767]",
+          "System.Runtime": "(,4.3.32767]",
+          "System.Runtime.CompilerServices.Unsafe": "(,7.0.32767]",
+          "System.Runtime.CompilerServices.VisualC": "(,4.3.32767]",
+          "System.Runtime.Extensions": "(,4.3.32767]",
+          "System.Runtime.Handles": "(,4.3.32767]",
+          "System.Runtime.InteropServices": "(,4.3.32767]",
+          "System.Runtime.InteropServices.RuntimeInformation": "(,4.3.32767]",
+          "System.Runtime.Loader": "(,4.3.32767]",
+          "System.Runtime.Numerics": "(,4.3.32767]",
+          "System.Runtime.Serialization.Formatters": "(,4.3.32767]",
+          "System.Runtime.Serialization.Json": "(,4.3.32767]",
+          "System.Runtime.Serialization.Primitives": "(,4.3.32767]",
+          "System.Runtime.Serialization.Xml": "(,4.3.32767]",
+          "System.Security.AccessControl": "(,6.0.32767]",
+          "System.Security.Claims": "(,4.3.32767]",
+          "System.Security.Cryptography.Algorithms": "(,4.3.32767]",
+          "System.Security.Cryptography.Cng": "(,5.0.32767]",
+          "System.Security.Cryptography.Csp": "(,4.3.32767]",
+          "System.Security.Cryptography.Encoding": "(,4.3.32767]",
+          "System.Security.Cryptography.OpenSsl": "(,5.0.32767]",
+          "System.Security.Cryptography.Primitives": "(,4.3.32767]",
+          "System.Security.Cryptography.X509Certificates": "(,4.3.32767]",
+          "System.Security.Cryptography.Xml": "(,10.0.32767]",
+          "System.Security.Principal": "(,4.3.32767]",
+          "System.Security.Principal.Windows": "(,5.0.32767]",
+          "System.Security.SecureString": "(,4.3.32767]",
+          "System.Text.Encoding": "(,4.3.32767]",
+          "System.Text.Encoding.CodePages": "(,10.0.32767]",
+          "System.Text.Encoding.Extensions": "(,4.3.32767]",
+          "System.Text.Encodings.Web": "(,10.0.32767]",
+          "System.Text.Json": "(,10.0.32767]",
+          "System.Text.RegularExpressions": "(,4.3.32767]",
+          "System.Threading": "(,4.3.32767]",
+          "System.Threading.AccessControl": "(,10.0.32767]",
+          "System.Threading.Channels": "(,10.0.32767]",
+          "System.Threading.Overlapped": "(,4.3.32767]",
+          "System.Threading.RateLimiting": "(,10.0.32767]",
+          "System.Threading.Tasks": "(,4.3.32767]",
+          "System.Threading.Tasks.Dataflow": "(,10.0.32767]",
+          "System.Threading.Tasks.Extensions": "(,5.0.32767]",
+          "System.Threading.Tasks.Parallel": "(,4.3.32767]",
+          "System.Threading.Thread": "(,4.3.32767]",
+          "System.Threading.ThreadPool": "(,4.3.32767]",
+          "System.Threading.Timer": "(,4.3.32767]",
+          "System.ValueTuple": "(,4.5.32767]",
+          "System.Xml.ReaderWriter": "(,4.3.32767]",
+          "System.Xml.XDocument": "(,4.3.32767]",
+          "System.Xml.XmlDocument": "(,4.3.32767]",
+          "System.Xml.XmlSerializer": "(,4.3.32767]",
+          "System.Xml.XPath": "(,4.3.32767]",
+          "System.Xml.XPath.XDocument": "(,5.0.32767]"
+        }
+      }
+    }
+  }
+}

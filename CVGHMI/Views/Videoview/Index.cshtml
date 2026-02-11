@@ -1,0 +1,373 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Live Video";
+}
+<script>
+    var profile_id = '@ViewBag.profile_id';
+</script>
+<script src="~/lib/videoview/videoview.js"></script>
+<script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.min.js" type="text/javascript"></script>
+<style>
+    .input-group-text {
+        /* background: #23223a; */
+        color: #00c3ff;
+        border: 1px solid #23223a;
+        border-radius: 8px 0 0 8px;
+        font-size: small;
+    }
+
+    #my_tree::-webkit-scrollbar {
+        width: 6px; /* scroll bar width */
+        height: 6px; /* horizontal height */
+    }
+
+    #my_tree::-webkit-scrollbar-track {
+        background: #eee; /* track color */
+        border-radius: 10px;
+    }
+
+    #my_tree::-webkit-scrollbar-thumb {
+        background: #888; /* scroll handle color */
+        border-radius: 10px;
+    }
+
+        #my_tree::-webkit-scrollbar-thumb:hover {
+            background: #555; /* on hover */
+        }
+    .form-control {
+        /* background: #23223a; */
+        /* color: #fff; */
+        border: 1px solid #23223a;
+        border-radius: 8px;
+    }
+
+
+    .jstree-contextmenu {
+        font-size: x-small !important; /* set your size */
+    }
+
+    .jstree-contextmenu-list .jstree-contextmenu-item > a:hover {
+        background-color: #007bff !important;
+        color: white !important;
+    }
+
+
+    .jstree-contextmenu,
+    .jstree-contextmenu-list .jstree-contextmenu-item > a {
+        font-size: x-small !important;
+    }
+
+
+    .jstree-contextmenu-list .jstree-contextmenu-item > a {
+        padding: 2px 6px !important;
+        line-height: 12px !important;
+    }
+
+        .form-control:focus {
+            border-color: #00c3ff;
+            box-shadow: 0 0 0 0.2rem rgba(0,195,255,0.15);
+            /* background: #23223a; */
+            /* color: #fff; */
+        }
+
+
+
+    .node-highlight > a {
+        color: #00ff00 !important; /* blue */
+        font-weight: bold;
+    }
+
+    .node-stop > a {
+        color: #dc3545 !important; /* red */
+    }
+
+
+
+
+</style>
+
+
+
+@* <div  style="background-color:#aacc;width:200px;padding:5px;height: calc(100vh - 180px)">
+            <div style="text-align:center;width:100%">
+                <label for="userid" class="form-label">Plate No</label>
+        </div>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="text" id="inputSearch" name="inputSearch" class="form-control"/>
+            </div>
+
+
+        <div id="my_tree" style="font-size:small;margin-top:5px;"></div>
+    </div>
+
+<div style="background-color:#aacc;width:200px;padding:5px;height: calc(100vh - 180px); width: calc(100wh - 400px)">
+    </div>
+         *@
+
+
+<div style="display:flex; height:calc(100vh - 125px);">
+
+    <!-- LEFT DIV -->
+    @* <div style="
+        background-color:#aacc;
+        width:200px;
+        padding:5px;
+        height: calc(100vh - 125px);
+        border-radius: 10px 0px 0px 10px;
+overflow:auto;
+    ">
+        <div style="text-align:center;width:100% ">
+            <label for="userid" class="form-label">Plate No</label>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input type="text" id="inputSearch" name="inputSearch" class="form-control" />
+        </div>
+
+        <div id="my_tree" style="font-size:small;margin-top:5px;"></div>
+    </div> *@
+
+
+    <div style="
+    background-color:#aacc;
+    width:200px;
+    padding:5px;
+    height: calc(100vh - 125px);
+    border-radius: 10px 0px 0px 10px;
+    display:flex;
+    flex-direction:column;
+">
+
+        <!-- FIXED HEADER -->
+        <div style="text-align:center;width:100%">
+            <label for="userid" class="form-label">Plate No</label>
+        </div>
+
+        <!-- FIXED SEARCH -->
+        <div class="input-group" style="margin-bottom:5px;">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input type="text" id="inputSearch" name="inputSearch" class="form-control" />
+        </div>
+
+        <!-- TREE WITH SCROLL -->
+        <div id="my_tree"
+             style="font-size:x-small; margin-top:5px; overflow-y:auto; flex:1; border:1px solid #888; background:white;">
+        </div>
+
+    </div>
+
+    <!-- RIGHT DIV -->
+    <div style="
+        background-color:#aacc;
+        padding:5px;
+        margin-left:1px;
+        height: calc(100vh - 125px);
+        width: calc(100vw - 200px - 20px);
+        border-radius: 0px 10px 10px 0px;
+        overflow:auto;
+    ">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-4 col-sm-12 padding-0 my-2">
+                <div id="xxoo" style="background-color: #000;border-radius: 10px; overflow: hidden; width: 100%; height: calc(100vh - 170px);">
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-4 col-sm-12 padding-0 my-2">
+                <div id="xxoo2" style="background-color: #000;border-radius: 10px; overflow: hidden; width: 100%; height: calc(100vh - 170px);">
+                </div>
+
+            </div>
+        </div>
+
+@* 
+        <div class="row " style="margin-top:5px">
+            <div class="col-lg-6 col-md-4 col-sm-12 padding-0 my-2">
+                <div id="xxoo3" style="background-color: #000;border-radius: 10px; overflow: hidden; width: 100%; height: 250px;">
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-4 col-sm-12 padding-0 my-2">
+                <div id="xxoo4" style="background-color: #000;border-radius: 10px; overflow: hidden; width: 100%; height: 250px;">
+                </div>
+
+            </div>
+        </div> *@
+
+
+    </div>
+
+</div>
+<script>
+        let owners = [
+    @{
+        bool first = true;
+        foreach (var ownerInfo in Model.ownerInfos)
+        {
+            if (!first)
+            {
+                @:,
+            }
+            first = false;
+            @:"@ownerInfo.owner_id"
+        }
+    }
+        ];
+</script>
+
+
+<script>
+        $('#my_tree').jstree({
+      "core": {
+        "check_callback": true,
+        "data":[] 
+      },
+
+      "types": {
+        "root": {
+              "icon": "org.png",
+          "valid_children": ["child"]
+        },
+        "child": {
+                  "icon": "car.png",
+          "valid_children": []
+        }
+      },
+
+      "plugins": [
+            "types", "contextmenu", "wholerow","search"
+      ],
+
+      "contextmenu": {
+        "items": function (node) {
+            if(node.type==="child"){
+          return {
+            videoplay: {
+              label: "Channel_1",
+              action: function () {
+
+                      //alert("Press channel 1 "+ node.id+" "+node.text);
+                      checksession(node.id,"1");
+                      //791078963128-1
+
+                     //playVideo('http://10.137.9.50:5003/video/791078963128-1');
+
+              }
+            },
+            remove: {
+                  label: "Channel_2",
+              action: function () {
+
+                  checksession(node.id,"2");
+
+                       //alert("Press channel 2 "+node.id+" "+node.text);
+
+
+
+
+              }
+            }
+          };
+              }
+        }
+      },
+          "search": {
+               "show_only_matches": true,
+            "show_only_matches_children": true,
+            "search_callback": function (str, node) {
+                if (!str) return true;
+
+                str = str.toLowerCase();
+
+                // match text
+                if (node.text.toLowerCase().includes(str)) return true;
+
+                // match id
+                if (node.id.toLowerCase().includes(str)) return true;
+
+                return false;
+            }
+          }
+    });
+
+
+
+
+    // 2) AFTER TREE IS READY → ADD OWNER_ID NODES
+    $('#my_tree').on('ready.jstree', function () {
+
+        let tree = $('#my_tree').jstree(true);
+
+  
+
+        // ADD EACH OWNER AS ROOT NODE
+        owners.forEach((owner, i) => {
+            tree.create_node("#", {
+                id: owner,
+                text: owner,
+                type: "root"
+            });
+        });
+
+        //tree.open_all();
+        let allNodes = tree.get_json('#', { 'flat': true });
+        allNodes.forEach((node, i) => {
+            //console.log(node);
+
+
+            $.ajax({
+            url: 'Data/GetDevice/' + node.id,
+            type: 'GET',
+            success: function (data) {
+
+                //console.log(data);
+                data.forEach((item,i)=>{
+                    
+                    tree.create_node(node.id, {
+            id: item.clientid,
+            text: item.plate_no,
+            type: "child"
+        });
+                    
+
+                
+                
+                
+                });
+
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching devices:', error);
+            }
+        });
+
+
+        });
+    });
+
+
+
+        var to = false;
+        $('#inputSearch').keyup(function () {
+            if(to) { clearTimeout(to); }
+            to = setTimeout(function () {
+                var v = $('#inputSearch').val();
+                    $('#my_tree').jstree(true).search(v);
+            }, 250);
+        });
+
+
+
+
+
+
+            
+
+    
+
+
+</script>

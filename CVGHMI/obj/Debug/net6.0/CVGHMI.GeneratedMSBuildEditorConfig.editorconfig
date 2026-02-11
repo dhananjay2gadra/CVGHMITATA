@@ -1,0 +1,103 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CVGHMI
+build_property.RootNamespace = CVGHMI
+build_property.ProjectDir = C:\Users\machindia_cloud\Documents\CVGHMI\CVGHMI\CVGHMI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\machindia_cloud\Documents\CVGHMI\CVGHMI\CVGHMI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Audio/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVkaW9caW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Device/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2aWNlXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Group/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Location/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25caW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Offline/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmbGluZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Query/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlcnlcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Rank/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua1xpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Shared/_Alarm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BbGFybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Shared/_Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Shared/_NoAlarm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob0FsYXJtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Sms/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU21zXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Video/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlkZW9caW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pxizao3ch2
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Organization/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JnYW5pemF0aW9uXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-rfplwykphp
+
+[C:/Users/machindia_cloud/Documents/CVGHMI/CVGHMI/CVGHMI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-wzmjh7lw8q

@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "Offline";
+}
+
+
+<div class="row justify-content-md-center">
+	<div class=" col-lg-2 ">
+		<div class="form-control-wrapper">
+			<span>ORGANIZATION</span>
+		</div>
+	</div>
+
+	<div class="col-lg-3" data-toggle='tooltip' data-placement='right' title='Click To Select Fleet Owner'>
+		<div class="form-control-wrapper">
+            <select id="ddlorg" style="width:100%;height: 44px; border-radius: 5px; background-color: white;">
+
+                @foreach (var ownerInfo in Model)
+                {
+
+                    <option value="@ownerInfo.owner_id">@ownerInfo.owner_id</option>
+
+                }
+            </select>
+
+		</div>
+	</div>
+
+
+	<div class=" col-lg-1 ">
+		<div class="form-control-wrapper">
+			<span>TO</span>
+		</div>
+	</div>
+
+	<div class="col-lg-3" data-toggle='tooltip' data-placement='right' title='Click To Select Date'>
+		<!-- <div class="form-control-wrapper"> -->
+
+        <input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="frmdate">
+
+		<!-- </div> -->
+	</div>
+	<div class="col-lg-2 col-md-12 col-sm-12 ">
+
+		@* <button type="button" id="btnsearch" class="btn btn-primary" onclick="showvalue()" style="margin-top: 0px;">Search</button> *@
+        <input type="button" id="btnsearch" value="Search" onclick="showvalue()" style="margin-top: 6px;" />
+
+	</div>
+
+
+
+
+</div>
+
+
+
+
+
+<div class="row" style="margin-top: 5px;margin-left:10px;margin-right: 10px;">
+    <div class="col-md-12">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card p-3 bk">
+                    <div class="d-flex flex-row mb-3">
+
+                        <div id="table-scroll" class="table-scroll">
+                            <table id="tblmain" class="main-table table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Vehicle No</th>
+
+                                        <th scope="col">Log Time</th>
+                                        <th scope="col">No Of Hours</th>
+
+                                        <th scope="col">Status</th>
+
+
+
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData">
+                                </tbody>
+                                <tfoot id="sub_table_foot">
+                                    <tr>
+                                        <th scope="col">Vehicle No</th>
+
+                                        <th scope="col">Organization</th>
+
+                                        <th scope="col">Alarm Date</th>
+                                        <th scope="col">Status</th>
+
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<script>
+    flatpickr("#frmdate", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i:S",
+        time_24hr: true,
+        defaultHour: 0,
+        enableSeconds: true,
+    });
+
+    flatpickr("#todate", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i:S",
+        time_24hr: true,
+        defaultHour: 0,
+        enableSeconds: true,
+    });
+
+
+    function showvalue()
+    {
+        var frmdt = $('#frmdate').val();
+        var ownid = $('#ddlorg').val();
+
+        setTabel(frmdt, ownid);
+
+       // alert($('#frmdate').val());
+    }
+
+    function setTabel(frmdt, ownid)
+    
+    {
+        //alert(varorg.innerHTML);
+
+
+        $.ajax({
+            url: `Data/GetOffline/${ownid}/${frmdt}`,
+            type: 'GET',
+            success: function (data) {
+                //alert(data);
+                var tableBody = $('#tblData');
+                tableBody.empty(); // Clear existing data
+
+
+                data.forEach(function (item) {
+                    var row = '<tr>' +
+                        '<td>' + item.plate_no + '</td>' +
+                        '<td>' + item.log_time + '</td>' +
+                        '<td>' + item.hours + '</td>' +
+                        '<td>' + item.status + '</td>' +
+                        '</tr>';
+                    tableBody.append(row);
+                });
+
+
+
+
+            },
+            error: function (xhr, status, error) {
+                // alert('Error: ' + error);
+            }
+        });
+
+
+    }
+
+
+
+</script>

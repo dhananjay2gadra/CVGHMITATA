@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "Sms";
+}
+
+
+<script>
+
+    function showvalue() {
+
+       // alert();
+        setTabel($("#ddlorg").val());
+    }
+
+
+
+    function setTabel(varorg) {
+        //alert(varorg.innerHTML);
+
+
+        $.ajax({
+            url: 'Data/GetContact/' + varorg,
+            type: 'GET',
+            success: function (data) {
+                //alert(data);
+                var tableBody = $('#tblData');
+                tableBody.empty(); // Clear existing data
+
+
+                data.forEach(function (item) {
+                    var row = '<tr>' +
+                        '<td>' + item.ownerid + '</td>' +
+                        '<td>' + item.personname + '</td>' +
+                        '<td>' + item.mobileno + '</td>' +
+                        '<td>' + item.department + '</td>' +
+                        '</tr>';
+                    tableBody.append(row);
+                });
+
+
+
+                
+            },
+            error: function (xhr, status, error) {
+                // alert('Error: ' + error);
+            }
+        });
+
+
+    }
+
+</script>
+
+
+   <div class="row justify-content-md-center">
+        <div class=" col-lg-2 ">
+                            <div class="form-control-wrapper">
+                                      <span>ORGANIZATION</span>
+                              </div>
+                        </div>
+
+                      <div class="col-lg-3">
+                            <div class="form-control-wrapper">
+            <select id="ddlorg" style="width:100%;height: 44px; border-radius: 5px; background-color: white;">
+
+                @foreach (var ownerInfo in Model)
+                {
+
+                    <option value="@ownerInfo.owner_id">@ownerInfo.owner_id</option>
+
+                }
+            </select>
+
+                              </div>
+                        </div>
+
+<div class="col-lg-1 col-md-12 col-sm-12 "  >
+
+      @*   <button type="button" id="btnsearch" class="btn btn-primary" onclick="showvalue()" style="margin-top: 0px;">Search</button> *@
+        <input type="button" id="btnsearch" value="Search" onclick="showvalue()" style="margin-top: 6px;" />
+
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" style="margin-top: 5px;margin-left:10px;margin-right: 10px;">
+    <div class="col-md-12">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card p-3 bk">
+                    <div class="d-flex flex-row mb-3">
+
+                        <div id="table-scroll" class="table-scroll">
+                            <table id="tblmain" class="main-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">PERSON NAME</th>
+
+                                        <th scope="col">ORGANIZATION</th>
+
+                                        <th scope="col">CONTACT NO</th>
+                                        
+                                        <th scope="col">ROLE</th>
+
+
+
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData">
+
+                                    <!--
+                                    </tbody>
+                                    <tfoot id="sub_table_foot">
+                                      <tr>
+                                        <th>Person Name</th>
+                                        <td>Fleet Owener</td>
+                                        <td>Contact No</td>
+                                        <td>Status</td>
+                                        <td>Role</td>
+
+
+                                      </tr>
+                                    </tfoot>-->
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+    </div>
+   

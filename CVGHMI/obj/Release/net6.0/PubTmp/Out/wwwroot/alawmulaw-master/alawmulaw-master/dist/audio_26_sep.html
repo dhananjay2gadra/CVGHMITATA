@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Fine-Tuning Controls</title>
+</head>
+<body>
+    <h2>WebSocket Audio Fine-Tuning Controls</h2>
+
+    <!-- Control Panel -->
+    <div>
+        <label for="bufferSize">Buffer Size: </label>
+        <input type="number" id="bufferSize" value="1024" step="512" min="512" max="4096"><br><br>
+
+        <label for="sampleRate">Sample Rate: </label>
+        <input type="number" id="sampleRate" value="8000" step="1000" min="4000" max="48000"><br><br>
+
+        <label for="amplitudeThreshold">Amplitude Threshold: </label>
+        <input type="range" id="amplitudeThreshold" value="0.1" min="0" max="1" step="0.01"><br>
+        <span>Threshold: <span id="ampValue">0.1</span></span><br><br>
+
+        <label for="bandPassFreq">Band-Pass Filter Frequency: </label>
+        <input type="number" id="bandPassFreq" value="3000" step="100" min="300" max="5000"><br><br>
+
+        <label for="bandPassQ">Band-Pass Filter Q Factor: </label>
+        <input type="number" id="bandPassQ" value="1" step="0.1" min="0.1" max="10"><br><br>
+
+        <button onclick="startAudio()">Start Audio Stream</button>
+    </div>
+
+    <script src="alawmulaw.js"></script> <!-- Make sure the G.711 A-law library is included -->
+    <script>
+        let websocket;
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        let mediaStreamSource, bandPassFilter, processor;
+
+        function startAudio() {
+            // Get control values
+			const TARGET_SAMPLE_RATE = 8000; // Desired sample rate for G.711 A-law
+            const bufferSize = parseInt(document.getElementById('bufferSize').value);
+            const targetSampleRate = parseInt(document.getElementById('sampleRate').value);
+            const amplitudeThreshold = parseFloat(document.getElementById('amplitudeThreshold').value);
+            const bandPassFrequency = parseFloat(document.getElementById('bandPassFreq').value);
+            const bandPassQ = parseFloat(document.getElementById('bandPassQ').value);
+
+            // Update displayed amplitude value
+            document.getElementById('ampValue').innerText = amplitudeThreshold;
+
+            // Step 1: Capture Audio from Microphone
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaStreamSource = audioContext.createMediaStreamSource(stream);
+
+                    // Create band-pass filter
+                    bandPassFilter = audioContext.createBiquadFilter();
+                    bandPassFilter.type = 'bandpass';
+                    bandPassFilter.frequency.value = bandPassFrequency;
+                    bandPassFilter.Q.value = bandPassQ;
+
+                    // Create ScriptProcessorNode for buffer size and audio processing
+                    processor = audioContext.createScriptProcessor(bufferSize, 1, 1);
+
+                    processor.onaudioprocess = function (event) {
+                        const inputBuffer = event.inputBuffer.getChannelData(0); // Channel 0 audio data
+                        let downsampledBuffer = downsampleBuffer(inputBuffer, audioContext.sampleRate, targetSampleRate);
+
+                        const amplitude = Math.max(...downsampledBuffer.map(Math.abs));
+                        if (amplitude > amplitudeThreshold) {
+                            let pcm16Array = new Int16Array(downsampledBuffer.length);
+                            for (let i = 0; i < downsampledBuffer.length; i++) {
+                                pcm16Array[i] = Math.max(-1, Math.min(1, downsampledBuffer[i])) * 32767;
+                            }
+                            let encoded = alawmulaw.alaw.encode(pcm16Array);
+
+                            // Send over WebSocket
+                            if (websocket && websocket.readyState === WebSocket.OPEN) {
+                                websocket.send(encoded);
+                            }
+                        }
+                    };
+
+                    // Connect audio nodes
+                    mediaStreamSource.connect(bandPassFilter);
+                    bandPassFilter.connect(processor);
+                    processor.connect(audioContext.destination); // Keep node chain alive
+                })
+                .catch(err => {
+                    console.error('Error accessing microphone:', err);
+                });
+
+            // Step 2: WebSocket Connection
+            websocket = new WebSocket('ws://127.0.0.1:6605/audio_in');
+            websocket.binaryType = 'arraybuffer';
+
+            websocket.onopen = function () {
+                console.log('WebSocket is connected');
+            };
+
+            websocket.onclose = function () {
+                console.log('WebSocket is closed');
+            };
+
+            websocket.onerror = function (error) {
+                console.error('WebSocket error:', error);
+            };
+
+            // Step 3: Receive and Play Audio
+            websocket.onmessage = function (event) {
+                const encodedAudio = new Uint8Array(event.data);
+                const decodedPcm = alawmulaw.alaw.decode(encodedAudio);
+				
+				
+				
+            // Convert decodedPcm to Float32Array for copyToChannel
+            let float32Array = new Float32Array(decodedPcm.length);
+            for (let i = 0; i < decodedPcm.length; i++) {
+                float32Array[i] = decodedPcm[i] / 32768; // Normalize from 16-bit PCM to [-1.0, 1.0] range
+            }
+
+            // Create audio buffer
+            const audioBuffer = audioContext.createBuffer(1, float32Array.length, TARGET_SAMPLE_RATE);
+            audioBuffer.copyToChannel(float32Array, 0); // Copy PCM data to the audio buffer
+
+            // Play the audio buffer
+            const source = audioContext.createBufferSource();
+            source.buffer = audioBuffer;
+            source.connect(audioContext.destination);
+            source.start(0);
+            };
+        }
+
+        // Helper function to downsample buffer
+        function downsampleBuffer(buffer, sampleRate, targetSampleRate) {
+            if (targetSampleRate >= sampleRate) {
+                throw new Error('Target sample rate should be lower than original sample rate');
+            }
+
+            const sampleRateRatio = sampleRate / targetSampleRate;
+            const newLength = Math.round(buffer.length / sampleRateRatio);
+            const result = new Float32Array(newLength);
+            let offsetResult = 0, offsetBuffer = 0;
+
+            while (offsetResult < result.length) {
+                const nextOffsetBuffer = Math.round((offsetResult + 1) * sampleRateRatio);
+                let accum = 0, count = 0;
+                for (let i = offsetBuffer; i < nextOffsetBuffer && i < buffer.length; i++) {
+                    accum += buffer[i];
+                    count++;
+                }
+                result[offsetResult] = accum / count;
+                offsetResult++;
+                offsetBuffer = nextOffsetBuffer;
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

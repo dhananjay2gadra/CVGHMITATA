@@ -1,0 +1,802 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <style>
+        body{
+            background-color: #FAF9F6;
+            
+        }
+        
+        .background-border {
+            background-color: #FFFFFF; /* Set your desired background color */
+            border: 2px solid #FAF9F6; /* Set border color to white */
+            padding: 10px; /* Optional: add padding for better spacing */
+            height: 280px;
+           
+        }
+        .background-border2{
+            background-color: #FFFFFF; /* Set your desired background color */
+            border: 2px solid #FAF9F6; /* Set border color to white */
+            padding: 10px; /* Optional: add padding for better spacing */
+            height: 500px;
+        }
+        
+
+        .highcharts-figure .chart-container {
+    width: 300px;
+    height: 200px;
+    float: left;
+   
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    width: 600px;
+    margin: 0 auto;
+   
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+@@media (max-width: 600px) {
+    .highcharts-figure,
+    .highcharts-data-table table {
+        width: 100%;
+    }
+
+    .highcharts-figure .chart-container {
+        width: 300px;
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+
+
+.highcharts-figure2,
+.highcharts-data-table table {
+    min-width: 360px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+.card-info {
+    float: left;
+}
+
+.risk-card {
+   
+   
+}
+.risk-card ul{
+  
+    font-size: 12px;
+    font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    text-align: left;
+}
+.risk-card ul li::marker {
+  color: rgb(190, 51, 9);
+ 
+}
+.Dangerous-Driving{
+   margin-top: 12%;
+   height: 145px;
+   width: 100%;
+   background-color: #e9eef7;
+}
+
+     </style>
+           <style>
+            .flex-container {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr); /* Create three equal-width columns */
+              gap: 10px; /* Space between grid items */
+            }
+            
+            .flex-container > div {
+              background: #f4f6f8;
+              height: 82px;
+              text-align: center;
+              border-left: 12px solid #0066b2;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding: 2% 2%;
+              font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            }
+            
+                   </style>
+                   <style>
+                    .highcharts-figure3,
+.highcharts-data-table table {
+    max-height: 350px;
+    margin: 1em auto;
+}  
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 400;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+                   </style>
+                      
+            <style>
+                .title {
+     color: #3C4054;
+     font-weight: 700;
+     font-size: 14px;
+     padding: 12px 0 14px 0;
+     border-top: 1px solid #e2e5eb;
+                }
+                #row {
+             display: flex;
+             flex-wrap: wrap;
+             gap: 15px;
+         }
+ 
+         #col{
+             flex: 1;
+             min-width: calc(50% - 15px);
+             box-sizing: border-box;
+         }
+                .dangerousItem {
+             padding: 15px;
+             background-color: #fff;
+             border-radius: 8px;
+             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         }
+ 
+         .labelValue {
+             margin-bottom: 10px;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+         }
+ 
+         .label {
+             font-size: 16px;
+             font-weight: bold;
+             color: #333;
+         }
+ 
+         .value {
+             font-size: 16px;
+             font-weight: bold;
+             color: #333;
+         }
+ 
+         .ant-progress-bg {
+             height: 6px;
+             border-radius: 100px;
+             background: rgb(88, 206, 250);
+         }
+             </style>
+
+              <style>
+                #pie-chart {
+                   
+                    height: 245px !important;
+                    margin-left: 15%;
+                }
+            </style>
+</head>
+<body>
+   
+    <div class="row">
+        <div class="col-sm-6 background-border"> 
+            <div class="col-sm-4 card-info">
+                <figure class="highcharts-figure">
+                    <div id="container-speed" class="chart-container" style="font-weight: bold;"></div>
+                </figure> 
+            </div>
+            <div class="col-sm-4 card-info"> 
+                 <p style="color: rgb(102, 102, 102);
+                 font-size: 0.8em;
+                 fill: rgb(102, 102, 102);margin-left: 45%;margin-top: 20%;font-weight: bold;"><span style="color: #0066b2;">LDW(L)</span> Deduction items</p>
+                <img src="images.png" style="width:100px;height: 100px;margin-left: 45%;">
+             </div>
+            <div class="col-sm-4 card-info">  
+            <p style="color: rgb(102, 102, 102);
+            font-size: 0.8em;
+            fill: rgb(102, 102, 102);margin-left: 22%;margin-top: 20%;font-weight: bold;">Risk Label Top8</p>   
+            <div class="risk-card">
+               <img src="graphrisk.PNG" width="150" height="120" style="margin-left: 22%;">
+                <ul style="float: left;margin-left: 10%;">
+                    <li>Eye Closed</li>
+                    <li>Yawning</li>
+                    <li>LDW(L)</li>
+                  
+                </ul>
+                <ul style="float: left;">
+                   <li>Forward <br>Collison<br> Warning</li>
+                </ul>
+            </div> 
+            </div>
+        </div>
+           
+        <div class="col-sm-2 background-border ">
+            <p style="color: rgb(102, 102, 102);
+            font-size: 0.8em;
+            fill: rgb(102, 102, 102);font-weight: bold;">Dangerous Driving</p>
+            <div class="Dangerous-Driving">
+                     <img src="driver-danger.PNG" style="padding: 20px;float: left;height: 140px;">
+                     <p style="font-size: 12px;font-weight: bold;padding-top: 12%;">Driver</p>
+                     <p style="font-size: 12px;font-weight: bold;">Plate No.</p>
+                     <p style="color: red;font-size: 17px;">0<sub style="font-size: 12px;">points</sub></p>
+            </div>
+        </div>
+
+
+ 
+        <div class="col-sm-4 column background-border">
+            <div class="flex-container">
+                <div style=" border-left: 12px solid #82C0A9;">
+                    
+                        <span>Online Vehicle</p>
+                        <p><span style="font-size: 20px;">2</span><sub style="font-size: 12px;">Vehicle</sub> </p>
+                                         
+             </div>
+             <div style=" border-left: 12px solid #a52920;">
+                <span>Offline Vehicle</p>
+                    <p><span style="font-size: 20px;">5</span> <sub style="font-size: 12px;">Vehicle</sub></p>
+            </div>
+                <div style=" border-left: 12px solid #6CBBD8;">
+                    
+                    <span>Total Vehicle</p>
+                        <p><span style="font-size: 20px;">200</span><sub style="font-size: 12px;">Vehicle</sub> </p>
+                </div>
+                <div style=" border-left: 12px solid #A092E1;">
+                    <span>Organization</p>
+                        <p><span style="font-size: 20px;">2</span> <sub style="font-size: 12px;">Organization</sub></p>
+                </div>
+                <div style=" border-left: 12px solid #CFBF8B;">
+                    <span>Total Alarm</p>
+                        <p><span style="font-size: 20px;">32</span> <sub style="font-size: 12px;">Alarm</sub></p>
+                </div>
+            </div>
+              
+          
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-8 background-border2"> 
+            <figure class="highcharts-figure2">
+                <div id="container"></div>
+                <p class="highcharts-description">
+                    
+                </p>
+
+                
+            </figure>
+            
+        </div>
+       
+        <div class="col-sm-4 background-border2">
+
+        
+
+
+
+
+
+            <figure class="highcharts-figure3">
+                <div id="container2" style="height: 245px;">
+                    
+                </div>
+                <p class="highcharts-description">
+                
+                </p>
+            </figure>
+              </div>
+              </div>
+             <div class="title">High-Risk Period</div>
+            <div class="dangerousValue">
+                <div class="row" id="row">
+                    <div class="col-sm-6" id="col">
+                        <div class="dangerousItem">
+                            <div class="labelValue">
+                                <span class="label">Dawn</span>
+                                <span class="value numberFontBold">100.00%</span>
+                            </div>
+                            <div class="ant-progress ant-progress-line ant-progress-status-success ant-progress-default"><div>
+                                <div class="ant-progress-outer">
+                                    <div class="ant-progress-inner">
+                                        <div class="ant-progress-bg" style="width: 100%; height: 6px; border-radius: 100px; background: rgb(88, 206, 250);"></div>
+                                    </div></div></div></div>        
+                     </div>
+                    </div>
+                    <div class="col-sm-6" id="col">
+                        <div class="dangerousItem">
+                            <div class="labelValue">
+                                <span class="label">Morning</span>
+                                <span class="value numberFontBold">100.00%</span>
+                            </div>
+                            <div class="ant-progress ant-progress-line ant-progress-status-success ant-progress-default"><div>
+                                <div class="ant-progress-outer">
+                                    <div class="ant-progress-inner">
+                                        <div class="ant-progress-bg" style="width: 8.8%; height: 6px; border-radius: 100px; background: rgb(88, 206, 250);"></div>
+                                    </div></div></div></div>        
+                     </div>
+                    </div>
+                    <div class="col-sm-6" id="col">
+                        <div class="dangerousItem">
+                            <div class="labelValue">
+                                <span class="label">Afternoon</span>
+                                <span class="value numberFontBold">100.00%</span>
+                            </div>
+                            <div class="ant-progress ant-progress-line ant-progress-status-success ant-progress-default"><div>
+                                <div class="ant-progress-outer">
+                                    <div class="ant-progress-inner">
+                                        <div class="ant-progress-bg" style="width: 8.8%; height: 6px; border-radius: 100px; background: rgb(88, 206, 250);"></div>
+                                    </div></div></div></div>        
+                     </div>
+                    </div>
+                    <div class="col-sm-6" id="col">
+                        <div class="dangerousItem">
+                            <div class="labelValue">
+                                <span class="label">Night</span>
+                                <span class="value numberFontBold">100.00%</span>
+                            </div>
+                            <div class="ant-progress ant-progress-line ant-progress-status-success ant-progress-default"><div>
+                                <div class="ant-progress-outer">
+                                    <div class="ant-progress-inner">
+                                        <div class="ant-progress-bg" style="width: 100%; height: 6px; border-radius: 100px; background: rgb(88, 206, 250);"></div>
+                                    </div></div></div></div>        
+                     </div>
+                    </div>
+        </div> 
+    </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!--guage card 1-->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script>
+    const gaugeOptions = {
+    chart: {
+        type: 'solidgauge'
+    },
+
+    title: null,
+
+    pane: {
+        center: ['50%', '85%'],
+        size: '80%',
+        startAngle: -90,
+        endAngle: 90,
+        background: {
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || '#fafafa',
+            borderRadius: 5,
+            innerRadius: '60%',
+            outerRadius: '100%',
+            shape: 'arc'
+        }
+    },
+
+    exporting: {
+        enabled: false
+    },
+
+    tooltip: {
+        enabled: false
+    },
+
+    // the value axis
+    yAxis: {
+        stops: [
+            [0.1, '#55BF3B'], // green
+            [0.5, '#DDDF0D'], // yellow
+            [0.9, '#00BFFF'] // red
+        ],
+        lineWidth: 0,
+        tickWidth: 0,
+        minorTickInterval: null,
+        tickAmount: 2,
+        title: {
+            y: -70
+        },
+        labels: {
+            y: 16
+        }
+    },
+
+    plotOptions: {
+        solidgauge: {
+            borderRadius: 3,
+            dataLabels: {
+                y: 5,
+                borderWidth: 0,
+                useHTML: true
+            }
+        }
+    }
+};
+
+// The speed gauge
+const chartSpeed = Highcharts.chart(
+    'container-speed', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 100,
+            title: {
+                text: 'Safety Overview'
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+
+        series: [{
+            name: 'Safety Overview',
+            data: [90],
+            dataLabels: {
+                format:
+                '<div style="text-align:center">' +
+                '<span style="font-size:25px">{y}</span><br/>' +
+                '<span style="font-size:12px;opacity:0.4">Safety Score</span>' +
+                '</div>'
+            },
+            tooltip: {
+                valueSuffix: ' Safety Score'
+            }
+        }]
+
+    }));
+
+// The RPM gauge
+const chartRpm = Highcharts.chart(
+    'container-rpm', Highcharts.merge(gaugeOptions, {
+        yAxis: {
+            min: 0,
+            max: 5,
+            title: {
+                text: 'RPM'
+            }
+        },
+
+        series: [{
+            name: 'RPM',
+            data: [1],
+            dataLabels: {
+                format:
+                '<div style="text-align:center">' +
+                '<span style="font-size:25px">{y:.1f}</span><br/>' +
+                '<span style="font-size:12px;opacity:0.4">' +
+                '* 1000 / min' +
+                '</span>' +
+                '</div>'
+            },
+            tooltip: {
+                valueSuffix: ' revolutions/min'
+            }
+        }]
+
+    }));
+
+// Bring life to the dials
+setInterval(function () {
+    // Speed
+    let point,
+        newVal,
+        inc;
+
+    if (chartSpeed) {
+        point = chartSpeed.series[0].points[0];
+        inc = Math.round((Math.random() - 0.5) * 100);
+        newVal = point.y + inc;
+
+        if (newVal < 0 || newVal > 200) {
+            newVal = point.y - inc;
+        }
+
+        point.update(newVal);
+    }
+
+    // RPM
+    if (chartRpm) {
+        point = chartRpm.series[0].points[0];
+        inc = Math.random() - 0.5;
+        newVal = point.y + inc;
+
+        if (newVal < 0 || newVal > 5) {
+            newVal = point.y - inc;
+        }
+
+        point.update(newVal);
+    }
+}, 2000);
+
+</script>
+<script>
+Highcharts.chart('container', {
+    title: {
+        text: 'Alerts Over Time'
+    },
+
+    accessibility: {
+        point: {
+            valueDescriptionFormat: '{xDescription}{separator}{value}'
+        }
+    },
+
+    xAxis: {
+        type: 'datetime', // Set the x-axis type to datetime
+        title: {
+            text: 'Date'
+        },
+        labels: {
+            format: '{value:%d %b}', // Format date labels as "10 Jul"
+            style: {
+                fontSize: '13px'
+            }
+        },
+        tickmarkPlacement: 'on' // Place ticks on category labels
+    },
+
+    yAxis: {
+        type: 'logarithmic',
+        title: {
+            text: 'Alarm Trend'
+        }
+    },
+
+    tooltip: {
+        headerFormat: '<b>{series.name}</b><br />',
+        pointFormat: 'Date: {point.x:%d %b}<br>Alerts: {point.y}<br>Vehicle: {point.vehicleNo}'
+    },
+
+    series: [{
+        name: 'No of Alerts',
+        type: 'line', // Ensure the chart type is line for smooth curves
+        data: [
+            { x: Date.UTC(2023, 6, 10), y: 5, vehicleNo: 'ABC123' },
+            { x: Date.UTC(2023, 6, 11), y: 7, vehicleNo: 'XYZ456' },
+            { x: Date.UTC(2023, 6, 12), y: 10, vehicleNo: 'LMN789' },
+            { x: Date.UTC(2023, 6, 13), y: 14, vehicleNo: 'ABC123' },
+            { x: Date.UTC(2023, 6, 14), y: 8, vehicleNo: 'XYZ456' },
+            { x: Date.UTC(2023, 6, 15), y: 5, vehicleNo: 'LMN789' }
+        ],
+        color: {
+            linearGradient: {
+                x1: 0,
+                x2: 0,
+                y1: 1,
+                y2: 0
+            },
+            stops: [
+                [0, '#0000ff'],
+                [1, '#00BFFF']
+            ]
+        },
+        marker: {
+            enabled: true // Show markers for each data point
+        }
+    }]
+});
+
+</script>
+<script>
+    Highcharts.chart('container2', {
+    chart: {
+        type: 'pie',
+        custom: {},
+        events: {
+            render() {
+                const chart = this,
+                    series = chart.series[0];
+                let customLabel = chart.options.chart.custom.label;
+
+                if (!customLabel) {
+                    customLabel = chart.options.chart.custom.label =
+                        chart.renderer.label(
+                            '<br/>' +
+                            '<strong></strong>'
+                        )
+                            .css({
+                                color: '#000',
+                                textAnchor: 'middle'
+                            })
+                            .add();
+                }
+
+                const x = series.center[0] + chart.plotLeft,
+                    y = series.center[1] + chart.plotTop -
+                    (customLabel.attr('height') / 2);
+
+                customLabel.attr({
+                    x,
+                    y
+                });
+                // Set font size based on chart diameter
+                customLabel.css({
+                    fontSize: `${series.center[2] / 12}px`
+                });
+            }
+        }
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    title: {
+        text: 'Alarm Operations Top5'
+    },
+    subtitle: {
+        text: ''
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            borderRadius: 8,
+            dataLabels: [{
+                enabled: true,
+                distance: 5,
+                format: '{point.name}'
+            }, {
+                enabled: true,
+                distance: -15,
+                format: '{point.percentage:.0f}%',
+                style: {
+                    fontSize: '0.9em'
+                }
+            }],
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Percentage',
+        colorByPoint: true,
+        innerSize: '90%',
+        data: [{
+            name: 'Text to Speech',
+            y: 23.9
+        }, {
+            name: 'Forced Intervention',
+            y: 12.6
+        }, {
+            name: 'Phone Notification',
+            y: 37.0
+        }, {
+            name: 'Force Pull Over',
+            y: 26.4
+        }
+    ]
+    }]
+});
+
+</script>
+<script>
+   var credits = document.getElementsByClassName("highcharts-credits");
+
+// Loop through the HTMLCollection and set their innerHTML to an empty string
+for (var i = 0; i < credits.length; i++) {
+    credits[i].innerHTML = "";
+}
+
+</script>
+
+
+
+</body>
+</html>

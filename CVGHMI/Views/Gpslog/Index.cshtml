@@ -1,0 +1,384 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "GPSLOG";
+}
+
+<!-- Include DataTables Core CSS -->
+<link rel="stylesheet" type="text/css" href="~/lib/Datatable/dataTables.dataTables.css">
+
+<!-- Include DataTables Buttons CSS -->
+<link rel="stylesheet" type="text/css" href="~/lib/Datatable/buttons.dataTables.css">
+
+
+
+<!-- Include DataTables JS -->
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/dataTables.js"></script>
+
+<!-- Include DataTables Buttons JS -->
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/dataTables.buttons.js"></script>
+
+<!-- Include Buttons DataTables JS -->
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/buttons.dataTables.js"></script>
+
+<!-- Include JSZip (for Excel export) -->
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/jszip.min.js"></script>
+
+<!-- Include pdfMake (for PDF export) -->
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/pdfmake.min.js"></script>
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/vfs_fonts.js"></script>
+
+<!-- Include Buttons HTML5 (for exporting to Excel, CSV, PDF, etc.) -->
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/buttons.html5.min.js"></script>
+
+<!-- Include Buttons Print JS -->
+<script type="text/javascript" charset="utf8" src="~/lib/Datatable/buttons.print.min.js"></script>
+
+
+<script type="text/javascript" charset="utf8" src="~/lib/gpslog/gpslog.js"></script>
+
+
+<div class="row">
+    @* 	<div class=" col-lg-2 ">
+		<div class="form-control-wrapper">
+			<span>ORGANIZATION</span>
+		</div>
+	</div> *@
+
+    <div class="col-lg-4" data-toggle='tooltip' data-placement='right' title='Click To Select The Fleet Owner'>
+        <div class="form-control-wrapper">
+            <label for="ddlorg">ORGANIZATION</label>
+            <select id="ddlorg" style="width:100%;height: 44px; border-radius: 5px; background-color: white;">
+
+                @foreach (var ownerInfo in Model)
+                {
+
+                    <option value="@ownerInfo.owner_id">@ownerInfo.owner_id</option>
+
+                }
+            </select>
+
+        </div>
+    </div>
+
+    @* 
+	<div class=" col-lg-1 ">
+		<div class="form-control-wrapper">
+			<span>FROM</span>
+		</div>
+	</div> *@
+
+    <div class="col-lg-4" data-toggle='tooltip' data-placement='right' title='Click To Select The From Date'>
+        <!-- <div class="form-control-wrapper"> -->
+        <label for="frmdate">FROM</label>
+        <input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="frmdate">
+
+        <!-- </div> -->
+    </div>
+
+
+
+    @* 	<div class="col-lg-1">
+		<div class="form-control-wrapper">
+			<span>TO</span>
+		</div>
+	</div> *@
+
+
+    <div class="col-lg-4">
+        <div class="form-control-wrapper" data-toggle='tooltip' data-placement='right' title='Click To Select The To Date'>
+            <label for="todate">TO</label>
+            <input type="text" class="form-control form-control-lg is-valid" placeholder="Select date and time" id="todate">
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row justify-content-md-center">
+
+
+    <div class="col-lg-1 col-md-12 col-sm-12 my-1 ">
+
+        @* <button type="button" id="btnsearch" class="btn btn-primary" onclick="showvalue()">Search</button> *@
+        <input type="button" id="btnsearch" value="Search" onclick="showvalue()" />
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+@* 
+<div class="row" style="margin-top: 5px;margin-left:10px;margin-right: 10px;">
+    <div class="col-md-12">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card p-3 bk">
+                    <div class="d-flex flex-row mb-3">
+
+                        <div id="table-scroll" class="table-scroll">
+                            <table id="tblmain" class="main-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Vehicle No</th>
+
+                                        <th scope="col">Organization</th>
+                                        <th scope="col">No Of Alarm</th>
+
+
+
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData">
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+ *@
+
+@* 
+
+<div class="row" style="margin-top: 5px;margin-left:10px;margin-right: 10px;">
+    <div class="col-md-12">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card p-3 bk">
+                    <div class="d-flex flex-row mb-3">
+
+                        <div id="table-scroll" class="table-scroll">
+                            <table id="tblmain_sub" class="main-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Vehicle No</th>
+
+                                        <th scope="col">Alarm Type</th>
+                                        <!--<th scope="col">Alarm Type</th>-->
+                                        <th scope="col">Alarm Time</th>
+                                        <th scope="col">Pic</th>
+                                        <th scope="col">Video</th>
+
+
+
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tblData_sub">
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+ *@
+<!-- Basic HTML Table -->
+<table id="example" class="display">
+    <thead>
+        <tr>
+
+            <th>Seq No</th>
+            <th>Vehicle No</th>
+
+
+            <th>Device Id</th>
+
+            <th>Gps Time</th>
+            <th>Longitude</th>
+
+            <th>Latitude</th>
+            <th>Gps Speed</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+<script>
+    flatpickr("#frmdate", {
+        enableTime: true,
+         dateFormat: "Y-m-d H:i:S",
+        time_24hr: true,
+        defaultHour: 0,
+        enableSeconds: true,
+    });
+
+    flatpickr("#todate", {
+        enableTime: true,
+         dateFormat: "Y-m-d H:i:S",
+        time_24hr: true,
+        defaultHour: 0,
+        enableSeconds: true,
+    });
+
+
+
+    function showvalue()
+    {
+        var ownerid = $("#ddlorg").val();
+        var frmdate = $("#frmdate").val();
+        var todate = $("#todate").val();
+        setTabel2(ownerid, frmdate, todate);
+
+    }
+
+
+
+
+    // function setTabel2(plateno, frmdt, todate) {
+    //     //alert(varorg.innerHTML);
+
+
+    //     $.ajax({
+    //         url: `Data/GetAlarmrank/${plateno}/${frmdt}/${todate}`,
+    //         type: 'GET',
+    //         success: function (data) {
+    //             //alert(data);
+    //             var tableBody = $('#tblData_sub');
+    //             tableBody.empty(); // Clear existing data
+
+
+    //             data.forEach(function (item) {
+    //                 var row = '<tr>' +
+    //                     '<td >' + item.plate_no + '</td>' +
+    //                     '<td>' + item.type + '</td>' +
+    //                     '<td>' + item.log_time + '</td>' +
+    //                     '<td><a href="https://10.137.9.50/' + item.pic2 + '" target="_blank">View Pic</a></td>'+
+    //                     '<td><a href="https://10.137.9.50/' + item.vid1 + '" target="_blank">View Vid</a></td>' +
+
+
+
+    //                     '</tr>';
+    //                 tableBody.append(row);
+    //             });
+
+
+
+
+    //         },
+    //         error: function (xhr, status, error) {
+    //             // alert('Error: ' + error);
+    //         }
+    //     });
+
+
+    // }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            responsive: true,
+            info: true,
+            pageLength: 50,
+            lengthMenu: [50, 100, 150, 200],
+            dom: 'lfrtipB', // This places buttons below and also includes search and page length controls
+            buttons: [
+                'csv', 'excel', 'pdf'
+            ]
+        });
+    });
+</script>
+
+
+<style>
+
+    table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td {
+        text-align: center;
+        font-size: 12pt;
+    }
+
+    .dt-paging {
+        display: inline;
+        float: right;
+    }
+
+    .dt-info {
+        display: inline;
+    }
+
+    .dt-length {
+        display: inline;
+    }
+
+    .dt-search {
+        display: inline;
+        float: right;
+    }
+
+    .dt-buttons {
+        display: inline;
+    }
+
+    thead {
+        background: #ccc;
+    }
+
+    /* Style buttons */
+    .btn {
+        /* background-color: red; /* Blue background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 0px 0px; /* Some padding */
+        font-size: 15px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+    }
+
+    table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date,
+    table.dataTable td.dt-type-numeric,
+    table.dataTable td.dt-type-date {
+        text-align: left;
+    }
+
+    td {
+        font-size: 12pt;
+    }
+
+</style>
