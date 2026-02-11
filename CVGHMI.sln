@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVGHMI", "CVGHMI\CVGHMI.csproj", "{74DF440B-6447-4582-8E2C-995B86F089CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Debug|x64.ActiveCfg = Debug|x64
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Debug|x64.Build.0 = Debug|x64
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Release|x64.ActiveCfg = Release|x64
+		{74DF440B-6447-4582-8E2C-995B86F089CC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05A27791-D9A9-4B53-B68D-8687C3E1178B}
+	EndGlobalSection
+EndGlobal
