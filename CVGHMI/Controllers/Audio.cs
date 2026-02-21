@@ -6,6 +6,7 @@ namespace CVGHMI.Controllers
     {
         public IActionResult Index()
         {
+            Response.Cookies.Delete(".AspNetCore.Session");
             return View();
         }
     }

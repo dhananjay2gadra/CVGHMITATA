@@ -74,7 +74,7 @@ namespace CVGHMI.Controllers
             try
             {
                 // Construct the full HTTPS URL
-                string videoUrl = $"https://10.137.9.50/jt_data/alarm_file/{dirName}/{fileName}";
+                string videoUrl = $"https://10.137.9.50:5001/jt_data/alarm_file/{dirName}/{fileName}";
 
                 // Create HttpClient that bypasses self-signed SSL issues (safe for internal use)
                 var handler = new HttpClientHandler
@@ -111,7 +111,7 @@ namespace CVGHMI.Controllers
             try
             {
                 // Construct the full HTTPS URL
-                string imageUrl = $"https://10.137.9.50/jt_data/alarm_file/{dirName}/{fileName}";
+                string imageUrl = $"https://10.137.9.50:5001/jt_data/alarm_file/{dirName}/{fileName}";
 
                 // Create HttpClient that bypasses self-signed SSL issues (safe for internal use)
                 var handler = new HttpClientHandler

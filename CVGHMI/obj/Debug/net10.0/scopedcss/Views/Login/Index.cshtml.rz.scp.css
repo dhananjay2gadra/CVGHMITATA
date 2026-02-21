@@ -1,0 +1,83 @@
+h1[b-pxizao3ch2] {
+    font-size: 38px;
+    color: #1877f2;
+    margin-bottom: 10px;
+}
+p[b-pxizao3ch2] {
+    font-size: 24px;
+    color: #606770;
+    
+}
+
+
+.container[b-pxizao3ch2] {
+    position: relative;
+    z-index: 2;
+}
+
+
+video[b-pxizao3ch2] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.dibo[b-pxizao3ch2] {
+    border-radius: 6px;
+
+    box-shadow: 1px 0px 1px 5px lightblue;
+}
+
+@media (max-width: 1200px) {
+
+    h1[b-pxizao3ch2] {
+        font-size: 28px;
+    }
+
+    p[b-pxizao3ch2] {
+        font-size: 18px;
+        
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    h1[b-pxizao3ch2] {
+        font-size: 24px;
+    }
+
+    p[b-pxizao3ch2] {
+        font-size: 14px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+     h1[b-pxizao3ch2] {
+        font-size: 30px;
+    }
+
+   p[b-pxizao3ch2] {
+        font-size: 26px;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    h1[b-pxizao3ch2] {
+        font-size: 28px;
+    }
+
+     p[b-pxizao3ch2] {
+        font-size: 20px;
+    }
+
+   
+}
+

@@ -59,14 +59,14 @@
                             <a class="nav-link " asp-area="" asp-controller="Location" asp-action="Index" style="color: #fff;">Location</a>
                         </li>
 
-                        @if (HttpContextAccessor.HttpContext.Session.GetString("usr_role") != "pdmin" || HttpContextAccessor.HttpContext.Session.GetString("usr_role") != "sdmin")
+                        @if (ViewBag.usr_role != "pdmin" && ViewBag.usr_role != "sdmin")
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="VoiceCall" asp-action="Index" style="color: #fff;">Video</a>
                             </li>
                         }
 
-                        @if (HttpContextAccessor.HttpContext.Session.GetString("usr_role") == "pdmin" || HttpContextAccessor.HttpContext.Session.GetString("usr_role") == "sdmin")
+                        @if (ViewBag.usr_role == "pdmin" || ViewBag.usr_role == "sdmin")
                         {
 
                             <li class="nav-item dropdown">
@@ -170,7 +170,7 @@
 
 
 
-                        @if (HttpContextAccessor.HttpContext.Session.GetString("usr_role") == "sdmin")
+                        @if (ViewBag.usr_role == "sdmin")
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
@@ -197,7 +197,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
 
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index" style="color: #fff;"> <i class="bi bi-person-circle" style="font-size:16px;font-style:normal">@HttpContextAccessor.HttpContext.Session.GetString("usr_id")</i></a>
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index" style="color: #fff;"> <i class="bi bi-person-circle" style="font-size:16px;font-style:normal">@ViewBag.usr_id</i></a>
                             
                         </li>
                         <li class="nav-item">

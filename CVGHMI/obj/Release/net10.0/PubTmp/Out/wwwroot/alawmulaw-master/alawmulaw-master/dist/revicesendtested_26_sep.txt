@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket G.711 A-law Audio with Resampling</title>
+</head>
+<body>
+    <script src="alawmulaw.js"></script>
+    <script>
+        const TARGET_SAMPLE_RATE = 8000;
+        const AMPLITUDE_THRESHOLD = 0.0;
+        const BAND_PASS_FREQUENCY = 3000;
+        const BAND_PASS_Q = 1;
+
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        // Step 1: Open WebSocket Connection
+        const websocket = new WebSocket('ws://localhost:5171/ws');
+        //const websocket = new WebSocket('wss://dfmsmi.corp.tatasteel.com/ws');        
+        websocket.binaryType = 'arraybuffer';
+
+        websocket.onopen = function() {
+            console.log('WebSocket is connected');
+        };
+
+        websocket.onclose = function() {
+            console.log('WebSocket is closed');
+        };
+
+        websocket.onerror = function(error) {
+            console.error('WebSocket error:', error);
+        };
+
+        // Register the audio worklet
+        audioContext.audioWorklet.addModule('audio-processor.js').then(() => {
+            // Step 2: Capture Audio from the Microphone
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(function(stream) {
+                    const mediaStreamSource = audioContext.createMediaStreamSource(stream);
+                    const audioWorkletNode = new AudioWorkletNode(audioContext, 'audio-processor', {
+                        processorOptions: {
+                            sampleRate: audioContext.sampleRate,
+                            amplitudeThreshold: AMPLITUDE_THRESHOLD,
+                            targetSampleRate: TARGET_SAMPLE_RATE
+                        }
+                    });
+
+                    // Listen for messages from the AudioProcessor
+                    audioWorkletNode.port.onmessage = function(event) {
+                        const downsampledBuffer = event.data;
+
+                        // Convert from Float32Array to Int16Array (required for G.711A encoding)
+                        let pcm16Array = new Int16Array(downsampledBuffer.length);
+                        for (let i = 0; i < downsampledBuffer.length; i++) {
+                            //pcm16Array[i] = Math.max(-1, Math.min(1, downsampledBuffer[i])) * 32767;
+                         const adjustedSample = Math.max(-1, Math.min(1, downsampledBuffer[i] * 4)); // Increase amplitude
+                        pcm16Array[i] = adjustedSample * 32767; // Convert to Int16 format
+                        }
+
+                        // Encode PCM to G.711A (A-law)
+                        let encoded = alawmulaw.alaw.encode(pcm16Array);
+
+                        if (websocket && websocket.readyState === WebSocket.OPEN) {
+                            websocket.send(encoded); // Send encoded data as binary over WebSocket
+                        }
+                    };
+
+                    // Create a band-pass filter
+                    const bandPassFilter = audioContext.createBiquadFilter();
+                    bandPassFilter.type = 'bandpass';
+                    bandPassFilter.frequency.value = BAND_PASS_FREQUENCY;
+                    bandPassFilter.Q.value = BAND_PASS_Q;
+
+                    // Connect the audio nodes
+                    mediaStreamSource.connect(bandPassFilter);
+                    bandPassFilter.connect(audioWorkletNode);
+                    audioWorkletNode.connect(audioContext.destination);
+                })
+                .catch(function(err) {
+                    console.error('Error accessing microphone', err);
+                });
+        }).catch(err => {
+            console.error('Error loading AudioWorklet module:', err);
+        });
+
+        // Step 3: Receive and Play Audio
+        websocket.onmessage = function(event) {
+            const encodedAudio = new Uint8Array(event.data);
+            const decodedPcm = alawmulaw.alaw.decode(encodedAudio); // Decode G.711 A-law to PCM
+
+            // Convert decodedPcm to Float32Array for copyToChannel
+            let float32Array = new Float32Array(decodedPcm.length);
+            for (let i = 0; i < decodedPcm.length; i++) {
+                float32Array[i] = decodedPcm[i] / 32768; // Normalize from 16-bit PCM to [-1.0, 1.0] range
+            }
+
+            // Create audio buffer
+            const audioBuffer = audioContext.createBuffer(1, float32Array.length, TARGET_SAMPLE_RATE);
+            audioBuffer.copyToChannel(float32Array, 0); // Copy PCM data to the audio buffer
+
+            // Play the audio buffer
+            const source = audioContext.createBufferSource();
+            source.buffer = audioBuffer;
+            source.connect(audioContext.destination);
+            source.start(0);
+        };
+
+
+window.addEventListener('beforeunload', function() {
+    if (websocket && websocket.readyState === WebSocket.OPEN) {
+        websocket.close();
+    }
+});
+    </script>
+</body>
+</html>

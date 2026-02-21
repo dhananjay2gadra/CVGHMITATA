@@ -14,43 +14,39 @@ namespace CVGHMI.Controllers
             _logger = logger;
         }
 
-        //public IActionResult Index()
-        //{
-
-        //    //return View("Index");//, null);
-        //     return View();
-        //}
-
+  
 
 
 
         public async Task<IActionResult> Index( )
         {
 
-           
+            Response.Cookies.Delete(".AspNetCore.Session");
 
-            String usr_id=  HttpContext.Session.GetString("usr_id");
-          String profile_id=  HttpContext.Session.GetString("profile_id");
+            //String usr_id=  HttpContext.Session.GetString("usr_id");
+            //String profile_id=  HttpContext.Session.GetString("profile_id");
+            ContextRequestInfo contextRequestInfo = new ContextRequestInfo();
+            UserInfoData userInfoData = await contextRequestInfo.UserInfo(HttpContext);
 
 
 
 
-
-            if(usr_id==null || usr_id=="")
+            if (userInfoData.usr_id==null)
             {
                return RedirectToAction("Index", "Login");
                 
             }
             else
             {
-                ViewBag.usr_id = usr_id;
-                ViewBag.profile_id = profile_id;
+                ViewBag.usr_id = userInfoData.usr_id;
+                ViewBag.profile_id = userInfoData.profile_id;
+                ViewBag.usr_role = userInfoData.usr_role;
 
                 DashInfoService dashInfoService = new DashInfoService();
                 DashorgalarminfoService dashorgalarminfoService = new DashorgalarminfoService();
 
-                var dashInfos = await dashInfoService.GetDashInfoAsync(profile_id);
-                var dashorgalarminfos = await dashorgalarminfoService.GetDashorgalarminfosAsync(profile_id);
+                var dashInfos = await dashInfoService.GetDashInfoAsync(userInfoData.profile_id);
+                var dashorgalarminfos = await dashorgalarminfoService.GetDashorgalarminfosAsync(userInfoData.profile_id);
 
 
                 if ( dashInfos != null && dashInfos.Count > 0 )

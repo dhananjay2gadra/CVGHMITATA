@@ -1,32 +1,35 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CVGHMI.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CVGHMI.Controllers
 {
     public class GroupController : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
 
+            Response.Cookies.Delete(".AspNetCore.Session");
+            //String usr_id = HttpContext.Session.GetString("usr_id");
+            //String profile_id = HttpContext.Session.GetString("profile_id");
 
-			String usr_id = HttpContext.Session.GetString("usr_id");
-			String profile_id = HttpContext.Session.GetString("profile_id");
+            ContextRequestInfo contextRequestInfo = new ContextRequestInfo();
+            UserInfoData userInfoData = await contextRequestInfo.UserInfo(HttpContext);
 
 
 
+            if (userInfoData.usr_id == null)
+            {
+                return RedirectToAction("Index", "Login");
 
+            }
+            else
+            {
+                ViewBag.usr_id = userInfoData.usr_id;
+				ViewBag.profile_id = userInfoData.profile_id;
+                ViewBag.usr_role = userInfoData.usr_role;// "genral";
 
-			if (usr_id == null || usr_id == "")
-			{
-				return RedirectToAction("Index", "Login");
-
-			}
-			else
-			{
-				ViewBag.usr_id = usr_id;
-				ViewBag.profile_id = profile_id;
-
-				// Example data
-				var categories = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
+                // Example data
+                var categories = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
 				var seriesData = new[] { 29.9, 71.5, 106.4, 129.2, 144.0 };
 
 				ViewBag.Categories = categories;

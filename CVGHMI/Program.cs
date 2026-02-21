@@ -18,6 +18,9 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Make session cookie essential
     //comited on developer environment
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.Strict;
+    //options.Cookie.SameSite = SameSiteMode.Lax;
+
 });
 
 builder.Services.AddHttpContextAccessor(); // Register IHttpContextAccessor
@@ -115,10 +118,11 @@ app.UseStaticFiles(new StaticFileOptions
 app.UseStaticFiles();
 
 app.UseRouting();
-
-app.UseAuthorization();
-app.UseAuthentication();
 app.UseSession();
+app.UseAuthentication();
+app.UseAuthorization();
+
+
 app.MapControllerRoute(
     name: "default",
     //pattern: "{controller=Home}/{action=Index}/{id?}");

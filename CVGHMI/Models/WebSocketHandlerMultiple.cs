@@ -15,7 +15,7 @@ namespace CVGHMI.Models
             {
                 // Connect to the Spring Boot WebSocket server
                 //await clientWebSocket.ConnectAsync(new Uri("ws://localhost:6605/audio_in"), CancellationToken.None);
-                await clientWebSocket.ConnectAsync(new Uri("ws://34.100.142.100:6504/audio_in/"+clientid), CancellationToken.None);
+                await clientWebSocket.ConnectAsync(new Uri("ws://10.137.9.50:6504/audio_in/" + clientid), CancellationToken.None);
 
                 // Start tasks to handle sending and receiving in parallel
                 var sendTask = Task.Run(async () => await SendMessagesToSpringBootServer(webSocket, clientWebSocket));

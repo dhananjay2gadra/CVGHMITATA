@@ -350,11 +350,7 @@
             contentType: 'application/json',
 
             success: function (response) {
-                //console.log('POST request successful');
-                //console.log(response);
-                //window.open('Video?VideoId=' + device_id + '-2');
-                //playVideo('http://103.30.118.143:6602/video/' + device_id + '-1');
-                //alert(response.msg);
+          
                 if (response.success == true) {
 
                     playVideo('https://dfmsmi.corp.tatasteel.com/cvideo/' + device_id + '-1');
@@ -420,7 +416,7 @@
                 //console.log('POST request successful');
                 //console.log(response);
                 //window.open('Video?VideoId=' + device_id + '-2');
-                playVideo2('http://103.30.118.143:6602/video/' + device_id + '-2');
+                playVideo2('https://dfmsmi.corp.tatasteel.com/cvideo/' + device_id + '-2');
             },
             error: function (xhr, status, error) {
                 console.error('POST request failed');
@@ -459,8 +455,7 @@
         // makevideoEndRequest2(data)
         wait(1000);
         makevideoStartRequest(data);
-        // makevideoStartRequest2(data);
-        // http://103.30.118.143:6602/video/791074553303-2
+
 
 
 

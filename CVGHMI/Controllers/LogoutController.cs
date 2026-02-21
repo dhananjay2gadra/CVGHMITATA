@@ -8,11 +8,7 @@ namespace CVGHMI.Controllers
         public IActionResult Index()
         {
 
-            HttpContext.Session.Remove("usr_id");
-            HttpContext.Session.Remove("profile_id");
-            //HttpContext.Session.SetString("usr_id", "");
-            //HttpContext.Session.SetString("profile_id","");
-            // return View();
+
             HttpContext.Session.Clear();
             Response.Cookies.Delete(".AspNetCore.Session");
 

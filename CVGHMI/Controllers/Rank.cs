@@ -1,4 +1,5 @@
-﻿using CVGHMI.Services;
+﻿using CVGHMI.Models;
+using CVGHMI.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CVGHMI.Controllers
@@ -8,20 +9,26 @@ namespace CVGHMI.Controllers
 
             public async Task<IActionResult> Index()
             {
-                String usr_id = HttpContext.Session.GetString("usr_id");
-                String profile_id = HttpContext.Session.GetString("profile_id");
-                VehicleDataService vehicleDataService = new VehicleDataService();
-                if (usr_id == null || usr_id == "")
-                {
-                    return RedirectToAction("Index", "Login");
+            //String usr_id = HttpContext.Session.GetString("usr_id");
+            // profile_id = HttpContext.Session.GetString("profile_id");
+            Response.Cookies.Delete(".AspNetCore.Session");
+            ContextRequestInfo contextRequestInfo = new ContextRequestInfo();
+            UserInfoData userInfoData = await contextRequestInfo.UserInfo(HttpContext);
 
-                }
-                else
-                {
-                    ViewBag.usr_id = usr_id;
-                    ViewBag.profile_id = profile_id;
-                    var ownerinfos = await vehicleDataService.GetOwnerInfoAsync(profile_id);
-                    return View(ownerinfos);
+
+            VehicleDataService vehicleDataService = new VehicleDataService();
+            if (userInfoData.usr_id == null)
+            {
+                return RedirectToAction("Index", "Login");
+
+            }
+            else
+            {
+                ViewBag.usr_id = userInfoData.usr_id;
+                ViewBag.profile_id = userInfoData.profile_id;
+                ViewBag.usr_role = userInfoData.usr_role;// "genral";
+                var ownerinfos = await vehicleDataService.GetOwnerInfoAsync(userInfoData.profile_id);
+                return View(ownerinfos);
                 }
             }
         
