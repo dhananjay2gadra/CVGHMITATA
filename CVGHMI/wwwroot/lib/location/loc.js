@@ -65,6 +65,9 @@ const choicesptype = new Choices(ddlptype, {
     shouldSort: false
 });
 
+
+
+
 const ddlorgSelect = document.getElementById('ddlorg');
 const choicesddlorge = new Choices(ddlorgSelect, {
     removeItemButton: true,
@@ -416,7 +419,8 @@ function getNewOneAlarm() {
     const txtMakerType = svtypeitem.map(item => item.value);//.join('|');
     const txtAlarmType = satypeitem.map(item => item.value);//.join('|');
     const txtpriority = sptypeitem.map(item => item.value);//.join('|');
-
+    const ddlzone = document.getElementById('ddlzone');
+    //alert(ddlzone.value);
 
 
     var objXMLHttpRequest = new XMLHttpRequest();
@@ -461,11 +465,27 @@ function getNewOneAlarm() {
                             );
                         }
 
-                     
+
+                        let isMatch5;
+
+                        if (ddlzone.value === 'Both') {
+                            isMatch5 = true;
+                        }
+                        else if (ddlzone.value === 'CZone') {
+                            isMatch5 = (alarm.plate_color === alarm.province_id);
+                        }
+                        else {
+                            isMatch5 = (alarm.plate_color !== alarm.province_id);
+                        }
+
+
+
+
+
                        
 
                         //return alarm.plate_no.toUpperCase().includes(txtVehicleNo) && alarm.speedf >= txspeed && alarm.owner_id.toUpperCase().includes(txtOrganization) && alarm.maker_id.toUpperCase().includes(txtMakerType) && alarm.type.toUpperCase().includes(txtAlarmType) && alarm.priority.toUpperCase().includes(txtpriority);
-                        return alarm.plate_no.toUpperCase().includes(txtVehicleNo) && alarm.speedf >= txspeed && isMatch && isMatch2 && isMatch3 && isMatch4;
+                        return alarm.plate_no.toUpperCase().includes(txtVehicleNo) && alarm.speedf >= txspeed && isMatch && isMatch2 && isMatch3 && isMatch4 && isMatch5;
                     });
 
                     // 4. 'fastLookDownAlarms' now holds only the elements that passed the test.
